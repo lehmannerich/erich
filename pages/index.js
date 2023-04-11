@@ -68,12 +68,14 @@ function Home() {
             </div>
           ))}
         </TextBlock>
-        <Headline>Writing</Headline>
+        <Headline>Essays</Headline>
         <TextBlock>
           {essays.map((essay, i) => (
             <a
               key={i}
               href={essay.link}
+              target="_blank"
+              rel="noreferrer"
               className="text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all"
             >
               <div>
@@ -152,17 +154,18 @@ const essays = [
   {
     title: "The Thousand Brains Theory",
     link: "https://buildingher.substack.com/p/the-thousand-brains-theory",
-    // description: "A book review of Jeff Hawkins's theory of intelligence.",
   },
   {
     title: "The basics of predictive processing",
     link: "https://buildingher.substack.com/p/predictive-processing",
-    // description: "A unifying theory on how the mind works.",
   },
   {
     title: "The right kind of optimism",
     link: "https://erich.substack.com/p/the-right-kind-of-optimism",
-    description: "",
+  },
+  {
+    title: "Bookshelf 2022",
+    link: "https://erich.substack.com/p/bookshelf-2022",
   },
 ];
 
