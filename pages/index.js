@@ -1,4 +1,4 @@
-import { ArrowRightIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
+import { ArrowTopRightOnSquareIcon, ArrowUpRightIcon } from "@heroicons/react/24/solid";
 
 function Home() {
   return (
@@ -82,7 +82,7 @@ function Home() {
                 <p className="font-medium">{essay.title}</p>
                 <p className="text-stone-500">{essay.description}</p>
               </div>
-              <ArrowRightIcon className="h-5 w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
+              <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
             </a>
           ))}
         </TextBlock>
