@@ -68,6 +68,24 @@ function Home() {
             </div>
           ))}
         </TextBlock>
+        <Headline>Experiments</Headline>
+        <TextBlock>
+          {projects.map((project, i) => (
+            <a
+              key={i}
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all"
+            >
+              <div>
+                <p className="font-medium">{project.title}</p>
+                <p className="text-stone-500">{project.description}</p>
+              </div>
+              <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
+            </a>
+          ))}
+        </TextBlock>
         <Headline>Essays</Headline>
         <TextBlock>
           {essays.map((essay, i) => (
@@ -166,6 +184,20 @@ const essays = [
   {
     title: "Bookshelf 2022",
     link: "https://erich.substack.com/p/bookshelf-2022",
+  },
+];
+
+const projects = [
+  {
+    title: "Negotiation Simulator",
+    description: "Next.js, Tailwind, Typescript, OpenAI GPT-4",
+    link: "https://next-chatbot-one.vercel.app/",
+  },
+  {
+    title: "Talk to Books",
+    description:
+      "Next.js, Tailwind, Typescript, Supabase, OpenAI Embeddings, OpenAI GPT-3.5",
+    link: "https://library-gpt.vercel.app/",
   },
 ];
 
