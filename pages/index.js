@@ -2,110 +2,120 @@ import { ArrowTopRightOnSquareIcon, ArrowUpRightIcon } from "@heroicons/react/24
 
 function Home() {
   return (
-    <main className="mx-auto max-w-2xl p-4">
-      <div className="pt-12">
-        <Headline>Erich Lehmann</Headline>
+    <>
+      <main className="mx-auto max-w-2xl p-4">
+        <div className="pt-10 print:pt-0">
+          <Headline>Erich Lehmann</Headline>
 
-        <TextBlock>
-          <p>Here, in short, is who I am.</p>
-          <p>
-            I think a lot about what it means to live a good life. I love having
-            intellectual conversations. I&#39;ve built many products - one of them became
-            really successful. I can code, I can write, and I have never stopped learning.
-          </p>
-          <p>Of these, the most important is that I have never stopped learning.</p>
-        </TextBlock>
+          <TextBlock>
+            <p>Here, in short, is who I am.</p>
+            <p>
+              I think a lot about what it means to live a good life. I love having
+              intellectual conversations. I&#39;ve built many products - one of them
+              became really successful. I can code, I can write, and I have never stopped
+              learning.
+            </p>
+            <p>Of these, the most important is that I have never stopped learning.</p>
+          </TextBlock>
 
-        <Headline>
-          Experience{" "}
-          {showLinks && (
-            <a href="https://www.linkedin.com/in/erichlehmann/">
-              <ArrowTopRightOnSquareIcon className="h-5 w-5 inline pb-1" />
-            </a>
-          )}
-        </Headline>
-        <TextBlock>
-          {experience.map((exp, i) => (
-            <div key={i} className="border rounded p-4 text-sm flex gap-4 items-center">
-              {exp.img && (
+          <Headline>
+            Experience{" "}
+            {showLinks && (
+              <a href="https://www.linkedin.com/in/erichlehmann/">
+                <ArrowTopRightOnSquareIcon className="h-5 w-5 inline pb-1" />
+              </a>
+            )}
+          </Headline>
+          <TextBlock>
+            {experience.map((exp, i) => (
+              <div key={i} className="border rounded p-4 text-sm flex gap-4 items-center">
+                {exp.img && (
+                  <div>
+                    <img src={exp.img} className="h-10 w-10" alt={exp.compnany} />
+                  </div>
+                )}
                 <div>
-                  <img src={exp.img} className="h-10 w-10" alt={exp.compnany} />
+                  <p className="font-medium">
+                    {exp.title} @ {exp.company}
+                  </p>
+                  <p className="text-stone-500">
+                    {exp.date} · {exp.time}
+                  </p>
                 </div>
-              )}
-              <div>
-                <p className="font-medium">
-                  {exp.title} @ {exp.company}
-                </p>
-                <p className="text-stone-500">
-                  {exp.date} · {exp.time}
-                </p>
               </div>
-            </div>
-          ))}
-        </TextBlock>
-        <Headline>
-          Education{" "}
-          {showLinks && (
-            <a href="https://www.linkedin.com/in/erichlehmann/">
-              <ArrowTopRightOnSquareIcon className="h-5 w-5 inline pb-1" />
-            </a>
-          )}
-        </Headline>
-        <TextBlock>
-          {education.map((edu, i) => (
-            <div key={i} className="border rounded p-4 text-sm flex gap-4 items-center">
-              {edu.img && (
+            ))}
+          </TextBlock>
+          <Headline>
+            Education{" "}
+            {showLinks && (
+              <a href="https://www.linkedin.com/in/erichlehmann/">
+                <ArrowTopRightOnSquareIcon className="h-5 w-5 inline pb-1" />
+              </a>
+            )}
+          </Headline>
+          <TextBlock>
+            {education.map((edu, i) => (
+              <div key={i} className="border rounded p-4 text-sm flex gap-4 items-center">
+                {edu.img && (
+                  <div>
+                    <img
+                      src={edu.img}
+                      className="h-10 w-10 rounded-sm"
+                      alt={edu.school}
+                    />
+                  </div>
+                )}
                 <div>
-                  <img src={edu.img} className="h-10 w-10 rounded-sm" alt={edu.school} />
+                  <p className="font-medium">{edu.degree}</p>
+                  <p className="text-stone-500">
+                    {edu.school} {edu.date}
+                  </p>
                 </div>
-              )}
-              <div>
-                <p className="font-medium">{edu.degree}</p>
-                <p className="text-stone-500">
-                  {edu.school} {edu.date}
-                </p>
               </div>
-            </div>
-          ))}
-        </TextBlock>
-        <Headline>Experiments</Headline>
-        <TextBlock>
-          {projects.map((project, i) => (
-            <a
-              key={i}
-              href={project.link}
-              target="_blank"
-              rel="noreferrer"
-              className="text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all"
-            >
-              <div>
-                <p className="font-medium">{project.title}</p>
-                <p className="text-stone-500">{project.description}</p>
-              </div>
-              <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
-            </a>
-          ))}
-        </TextBlock>
-        <Headline>Essays</Headline>
-        <TextBlock>
-          {essays.map((essay, i) => (
-            <a
-              key={i}
-              href={essay.link}
-              target="_blank"
-              rel="noreferrer"
-              className="text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all"
-            >
-              <div>
-                <p className="font-medium">{essay.title}</p>
-                <p className="text-stone-500">{essay.description}</p>
-              </div>
-              <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
-            </a>
-          ))}
-        </TextBlock>
-      </div>
-    </main>
+            ))}
+          </TextBlock>
+          <Headline>Experiments</Headline>
+          <TextBlock>
+            {projects.map((project, i) => (
+              <a
+                key={i}
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all"
+              >
+                <div>
+                  <p className="font-medium">{project.title}</p>
+                  <p className="text-stone-500">{project.description}</p>
+                </div>
+                <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
+              </a>
+            ))}
+          </TextBlock>
+          <Headline>Essays</Headline>
+          <TextBlock>
+            {essays.map((essay, i) => (
+              <a
+                key={i}
+                href={essay.link}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all"
+              >
+                <div>
+                  <p className="font-medium">{essay.title}</p>
+                  <p className="text-stone-500">{essay.description}</p>
+                </div>
+                <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
+              </a>
+            ))}
+          </TextBlock>
+        </div>
+      </main>
+      <footer>
+        <div className="h-32"></div>
+      </footer>
+    </>
   );
 }
 
