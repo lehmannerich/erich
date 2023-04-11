@@ -1,4 +1,5 @@
 import { ArrowTopRightOnSquareIcon, ArrowUpRightIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
 
 function Home() {
   return (
@@ -31,7 +32,13 @@ function Home() {
               <div key={i} className="border rounded p-4 text-sm flex gap-4 items-center">
                 {exp.img && (
                   <div>
-                    <img src={exp.img} className="h-10 w-10" alt={exp.compnany} />
+                    <Image
+                      src={exp.img}
+                      width={40}
+                      height={40}
+                      className="h-10 w-10"
+                      alt={exp.company}
+                    />
                   </div>
                 )}
                 <div>
@@ -58,7 +65,9 @@ function Home() {
               <div key={i} className="border rounded p-4 text-sm flex gap-4 items-center">
                 {edu.img && (
                   <div>
-                    <img
+                    <Image
+                      width={40}
+                      height={40}
                       src={edu.img}
                       className="h-10 w-10 rounded-sm"
                       alt={edu.school}
@@ -145,21 +154,21 @@ const experience = [
     title: "Co-Founder",
     date: "Jan 2018 - Present",
     time: getTimeFromJan2018(),
-    img: "https://media.licdn.com/dms/image/C4D0BAQGFz3EX7ftAuA/company-logo_100_100/0/1613729179057?e=1689206400&v=beta&t=HTu9zYZRM9qGq-oYrUlinPwhDtq54PSCBsHLKinSNqE",
+    img: "/MA.jpg",
   },
   {
     company: "Academy Ventures",
     title: "Founder",
     date: "2016 - 2018",
     time: "2 yrs",
-    img: "https://media.licdn.com/dms/image/C4E0BAQHxK9OOoZrl4Q/company-logo_100_100/0/1519884749536?e=1689206400&v=beta&t=Y0Pv5CTpa8Udwilj_5iLodGsNnadfLy-ARwHVjN3fog",
+    img: "/AV.jpg",
   },
   {
     company: "Deloitte Digital",
     title: "Venture Architect",
     date: "2014 - 2016",
     time: "2 yrs",
-    img: "https://media.licdn.com/dms/image/C510BAQG9x6s0x5PIxw/company-logo_100_100/0/1519904069133?e=1689206400&v=beta&t=0uA-fcEPHZWzwJ-QNV06HWtZuLMfbBtNZ6_3OL3FFBw",
+    img: "/DD.jpg",
   },
 ];
 
@@ -168,13 +177,13 @@ const education = [
     school: "Ludwig-Maximilians-Universität München",
     degree: "Bachelor of Science, Business Administration and Management",
     date: "2010 - 2014",
-    img: "https://media.licdn.com/dms/image/C4D0BAQH_R0ADkfGotA/company-logo_100_100/0/1626421339943?e=1689206400&v=beta&t=aVj_pT5YCGwa9gRq_wtv4bkFFj63hyTugY_Jz8QqmoI",
+    img: "/LMU.jpg",
   },
   {
     school: "Y Combinator",
     degree: "Alumni of Batch W21",
     date: "",
-    img: "https://media.licdn.com/dms/image/C4D0BAQGPzdBPNxrmEg/company-logo_100_100/0/1673555092951?e=1689206400&v=beta&t=OQm7hEnhq8PenmwQRmNOC0Gy5NPF9srbNuCC9Bd3ACg",
+    img: "/YC.jpg",
   },
 ];
 
