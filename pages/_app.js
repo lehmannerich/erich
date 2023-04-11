@@ -1,14 +1,13 @@
 import { Analytics } from "@vercel/analytics/react";
-import type { AppProps } from "next/app";
 
 import "@vercel/examples-ui/globals.css";
 import Head from "next/head";
 
-function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Next.js Chatbot</title>
+        <title>Erich Lehmann</title>
       </Head>
       <Component {...pageProps} />
       <Analytics />
