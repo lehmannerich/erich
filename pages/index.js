@@ -1,4 +1,4 @@
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
+import { ArrowRightIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
 
 function Home() {
   return (
@@ -17,7 +17,7 @@ function Home() {
         </TextBlock>
 
         <Headline>
-          Work Experience{" "}
+          Experience{" "}
           {showLinks && (
             <a href="https://www.linkedin.com/in/erichlehmann/">
               <ArrowTopRightOnSquareIcon className="h-5 w-5 inline pb-1" />
@@ -66,6 +66,22 @@ function Home() {
                 </p>
               </div>
             </div>
+          ))}
+        </TextBlock>
+        <Headline>Writing</Headline>
+        <TextBlock>
+          {essays.map((essay, i) => (
+            <a
+              key={i}
+              href={essay.link}
+              className="text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all"
+            >
+              <div>
+                <p className="font-medium">{essay.title}</p>
+                <p className="text-stone-500">{essay.description}</p>
+              </div>
+              <ArrowRightIcon className="h-5 w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
+            </a>
           ))}
         </TextBlock>
       </div>
@@ -129,6 +145,24 @@ const education = [
     degree: "Alumni of Batch W21",
     date: "",
     img: "https://media.licdn.com/dms/image/C4D0BAQGPzdBPNxrmEg/company-logo_100_100/0/1673555092951?e=1689206400&v=beta&t=OQm7hEnhq8PenmwQRmNOC0Gy5NPF9srbNuCC9Bd3ACg",
+  },
+];
+
+const essays = [
+  {
+    title: "The Thousand Brains Theory",
+    link: "https://buildingher.substack.com/p/the-thousand-brains-theory",
+    // description: "A book review of Jeff Hawkins's theory of intelligence.",
+  },
+  {
+    title: "The basics of predictive processing",
+    link: "https://buildingher.substack.com/p/predictive-processing",
+    // description: "A unifying theory on how the mind works.",
+  },
+  {
+    title: "The right kind of optimism",
+    link: "https://erich.substack.com/p/the-right-kind-of-optimism",
+    description: "",
   },
 ];
 
