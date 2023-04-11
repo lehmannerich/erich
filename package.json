@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "scrape": "tsx scripts/scrape-ourworldindata.ts",
-    "embed": "tsx scripts/embed-ourworldindata.ts"
+    "lint": "next lint"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
