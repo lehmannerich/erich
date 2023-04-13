@@ -9,10 +9,10 @@ function TextBlock({ children }) {
 function Main({ children }) {
   return (
     <>
-      <main className="mx-auto max-w-2xl p-4 pt-0 md:pt-10 print:pt-0">{children}</main>
-      <footer>
-        <div className="h-32"></div>
-      </footer>
+      <main className="mx-auto max-w-2xl p-4 pt-0 md:pt-10 print:pt-0 print:px-12">
+        {children}
+      </main>
+      <div className="h-32"></div>
     </>
   );
 }
