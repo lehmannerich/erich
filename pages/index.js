@@ -49,18 +49,6 @@ function Home() {
               </div>
             ))}
           </TextBlock>
-          <Headline>Skill</Headline>
-          <TextBlock>
-            <p>
-              My core skills are shipping product and making sales. I learned this from
-              building my companies, from reading Paul Graham and Jason Fried and from
-              being coached by YC partners. I have all the skills necessary to do it all
-              alone (build a full stack app, reach out to customers). And I have all the
-              skills necessary to do it with a team (align the team on a mission, enable
-              the devs to ship fast, establish repeatable sales channels, ensure constant
-              input of customer feedback).
-            </p>
-          </TextBlock>
           <Headline>Education</Headline>
           <TextBlock>
             {education.map((edu, i) => (
@@ -84,6 +72,18 @@ function Home() {
                 </div>
               </div>
             ))}
+          </TextBlock>
+          <Headline>Skill</Headline>
+          <TextBlock>
+            <p>
+              My core skills are shipping product and making sales. I learned this from
+              building my companies, from reading Paul Graham and Jason Fried and from
+              being coached by YC partners. I have all the skills necessary to do it all
+              alone (build a full stack app, reach out to customers). And I have all the
+              skills necessary to do it with a team (align the team on a mission, enable
+              the devs to ship fast, establish repeatable sales channels, ensure constant
+              input of customer feedback).
+            </p>
           </TextBlock>
           <Headline>Experiments</Headline>
           <TextBlock>
