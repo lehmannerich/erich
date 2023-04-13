@@ -1,5 +1,4 @@
 import Image from "next/image";
-import FloatingSVG from "../components/FloatingSVG/FloatingSVG";
 import { Headline, Main, TextBlock } from "../components/Structure";
 
 export default function Kurzgesagt({}) {
@@ -30,9 +29,18 @@ export default function Kurzgesagt({}) {
           expanded from a couple of thousands to several million viewers. I finished my
           studies and became a founder.
         </TextBlock>
-        <FloatingSVG svgPath="/HR_Birb.svg" />
-
-        <Headline>I’m applying for the Senior Product Manager role.</Headline>
+        <div className="-mb-7">
+          <Headline>
+            I’m applying for the Senior Product Manager role.
+            <Image
+              src="/HR_Birb.svg"
+              width={40}
+              height={40}
+              className="inline ml-3 pb-6"
+              alt="HR_Birb"
+            />
+          </Headline>
+        </div>
         <TextBlock>
           I think I can help Kurzgesagt with making things your fans love and find a way
           to create a recurring revenue stream. The success of the calendar and shop is
