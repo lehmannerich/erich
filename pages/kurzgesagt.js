@@ -5,7 +5,6 @@ import { Headline, Main, TextBlock } from "../components/Structure";
 export default function Kurzgesagt({}) {
   return (
     <>
-      <FloatingSVG svgPath="/HR_Birb.svg" />
       <Main>
         {/* <img src="/HR_Birb.svg" alt="HR_Birb" /> */}
         <Headline>
@@ -31,6 +30,8 @@ export default function Kurzgesagt({}) {
           expanded from a couple of thousands to several million viewers. I finished my
           studies and became a founder.
         </TextBlock>
+        <FloatingSVG svgPath="/HR_Birb.svg" />
+
         <Headline>I’m applying for the Senior Product Manager role.</Headline>
         <TextBlock>
           I think I can help Kurzgesagt with making things your fans love and find a way
