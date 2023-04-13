@@ -6,4 +6,15 @@ function TextBlock({ children }) {
   return <div className="font-light flex flex-col gap-4 mt-4">{children}</div>;
 }
 
-export { Headline, TextBlock };
+function Main({ children }) {
+  return (
+    <>
+      <main className="mx-auto max-w-2xl p-4 pt-0 md:pt-10 print:pt-0">{children}</main>
+      <footer>
+        <div className="h-32"></div>
+      </footer>
+    </>
+  );
+}
+
+export { Headline, TextBlock, Main };

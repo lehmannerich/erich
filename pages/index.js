@@ -1,144 +1,138 @@
 import { ArrowTopRightOnSquareIcon, ArrowUpRightIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
-import { Headline, TextBlock } from "../components/Structure";
+import { Headline, Main, TextBlock } from "../components/Structure";
 
 function Home() {
   return (
     <>
-      <main className="mx-auto max-w-2xl p-4">
-        <div className="pt-0 md:pt-10 print:pt-0">
-          <Headline>Erich Lehmann</Headline>
-
-          <TextBlock>
-            <p>Here, in short, is who I am.</p>
-            <p>
-              I think a lot about what it means to live a good life. I enjoy building
-              things that people love. I built two companies from the ground up - one of
-              them became really successful. I can code, I can write and I have never
-              stopped learning.
-            </p>
-          </TextBlock>
-          <Headline>Experience</Headline>
-          <TextBlock>
-            {experience.map((exp, i) => (
-              <div key={i} className="border rounded p-4 text-sm flex gap-4">
-                {exp.img && (
-                  <div className="w-full max-w-[40px]">
-                    <Image
-                      src={exp.img}
-                      width={40}
-                      height={40}
-                      className="h-10 w-10"
-                      alt={exp.company}
-                    />
-                  </div>
-                )}
-                <div className="w-full">
-                  <p className="font-medium">
-                    {exp.title} @ {exp.company}
-                    {exp.link && (
-                      <a href={exp.link} target="_blank" rel="noreferrer">
-                        <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 m-1 text-stone-500 hover:text-stone-800" />
-                      </a>
-                    )}
-                  </p>
-                  <p className="text-stone-500">
-                    {exp.date} · {exp.time}
-                  </p>
-                  <p className="mt-1">{exp.description}</p>
+      <Main>
+        <Headline>Erich Lehmann</Headline>
+        <TextBlock>
+          <p>Here, in short, is who I am.</p>
+          <p>
+            I think a lot about what it means to live a good life. I enjoy building things
+            that people love. I built two companies from the ground up - one of them
+            became really successful. I can code, I can write and I have never stopped
+            learning.
+          </p>
+        </TextBlock>
+        <Headline>Experience</Headline>
+        <TextBlock>
+          {experience.map((exp, i) => (
+            <div key={i} className="border rounded p-4 text-sm flex gap-4">
+              {exp.img && (
+                <div className="w-full max-w-[40px]">
+                  <Image
+                    src={exp.img}
+                    width={40}
+                    height={40}
+                    className="h-10 w-10"
+                    alt={exp.company}
+                  />
                 </div>
+              )}
+              <div className="w-full">
+                <p className="font-medium">
+                  {exp.title} @ {exp.company}
+                  {exp.link && (
+                    <a href={exp.link} target="_blank" rel="noreferrer">
+                      <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 m-1 text-stone-500 hover:text-stone-800" />
+                    </a>
+                  )}
+                </p>
+                <p className="text-stone-500">
+                  {exp.date} · {exp.time}
+                </p>
+                <p className="mt-1">{exp.description}</p>
               </div>
-            ))}
-          </TextBlock>
-          <Headline>Education</Headline>
-          <TextBlock>
-            {education.map((edu, i) => (
-              <div key={i} className="border rounded p-4 text-sm flex gap-4">
-                {edu.img && (
-                  <div className="w-full max-w-[40px]">
-                    <Image
-                      width={40}
-                      height={40}
-                      src={edu.img}
-                      className="h-10 w-10 rounded-sm"
-                      alt={edu.school}
-                    />
-                  </div>
-                )}
-                <div className="w-full">
-                  <p className="font-medium">{edu.degree}</p>
-                  <p className="text-stone-500">
-                    {edu.school} {edu.date}
-                  </p>
+            </div>
+          ))}
+        </TextBlock>
+        <Headline>Education</Headline>
+        <TextBlock>
+          {education.map((edu, i) => (
+            <div key={i} className="border rounded p-4 text-sm flex gap-4">
+              {edu.img && (
+                <div className="w-full max-w-[40px]">
+                  <Image
+                    width={40}
+                    height={40}
+                    src={edu.img}
+                    className="h-10 w-10 rounded-sm"
+                    alt={edu.school}
+                  />
                 </div>
+              )}
+              <div className="w-full">
+                <p className="font-medium">{edu.degree}</p>
+                <p className="text-stone-500">
+                  {edu.school} {edu.date}
+                </p>
               </div>
-            ))}
-          </TextBlock>
-          <Headline>Skills</Headline>
-          <TextBlock>
-            <p>
-              My core skills are shipping product and making sales. I learned this from
-              building my companies, from reading Paul Graham and Jason Fried and from
-              being coached by YC partners. I have all the skills necessary to do it all
-              alone (build a full stack app, reach out to customers). And I have all the
-              skills necessary to do it with a team (align the team on a mission, enable
-              the devs to ship fast, establish repeatable sales channels, ensure constant
-              input of customer feedback).
-            </p>
-            <p className="flex flex-wrap gap-1">
-              {skills.map((skill, i) => {
-                return (
-                  <span
-                    key={i}
-                    className="text-xs font-normal px-2.5 py-1 bg-stone-100 rounded"
-                  >
-                    {skill}
-                  </span>
-                );
-              })}
-            </p>
-          </TextBlock>
-          <Headline>Experiments</Headline>
-          <TextBlock>
-            {projects.map((project, i) => (
-              <a
-                key={i}
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all"
-              >
-                <div>
-                  <p className="font-medium">{project.title}</p>
-                  <p className="text-stone-500">{project.description}</p>
-                </div>
-                <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
-              </a>
-            ))}
-          </TextBlock>
-          <Headline>Essays</Headline>
-          <TextBlock>
-            {essays.map((essay, i) => (
-              <a
-                key={i}
-                href={essay.link}
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all"
-              >
-                <div>
-                  <p className="font-medium">{essay.title}</p>
-                  <p className="text-stone-500">{essay.description}</p>
-                </div>
-                <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
-              </a>
-            ))}
-          </TextBlock>
-        </div>
-      </main>
-      <footer>
-        <div className="h-32"></div>
-      </footer>
+            </div>
+          ))}
+        </TextBlock>
+        <Headline>Skills</Headline>
+        <TextBlock>
+          <p>
+            My core skills are shipping product and making sales. I learned this from
+            building my companies, from reading Paul Graham and Jason Fried and from being
+            coached by YC partners. I have all the skills necessary to do it all alone
+            (build a full stack app, reach out to customers). And I have all the skills
+            necessary to do it with a team (align the team on a mission, enable the devs
+            to ship fast, establish repeatable sales channels, ensure constant input of
+            customer feedback).
+          </p>
+          <p className="flex flex-wrap gap-1">
+            {skills.map((skill, i) => {
+              return (
+                <span
+                  key={i}
+                  className="text-xs font-normal px-2.5 py-1 bg-stone-100 rounded border print:bg-white"
+                >
+                  {skill}
+                </span>
+              );
+            })}
+          </p>
+        </TextBlock>
+        <Headline>Experiments</Headline>
+        <TextBlock>
+          {projects.map((project, i) => (
+            <a
+              key={i}
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all"
+            >
+              <div>
+                <p className="font-medium">{project.title}</p>
+                <p className="text-stone-500">{project.description}</p>
+              </div>
+              <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
+            </a>
+          ))}
+        </TextBlock>
+        <Headline>Essays</Headline>
+        <TextBlock>
+          {essays.map((essay, i) => (
+            <a
+              key={i}
+              href={essay.link}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all"
+            >
+              <div>
+                <p className="font-medium">{essay.title}</p>
+                <p className="text-stone-500">{essay.description}</p>
+              </div>
+              <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
+            </a>
+          ))}
+        </TextBlock>
+      </Main>
     </>
   );
 }
