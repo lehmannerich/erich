@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply max-h-screen antialiased;
+    @apply antialiased;
   }
 
   * {
