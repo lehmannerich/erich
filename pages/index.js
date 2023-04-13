@@ -5,7 +5,7 @@ function Home() {
   return (
     <>
       <main className="mx-auto max-w-2xl p-4">
-        <div className="pt-10 print:pt-0">
+        <div className="pt-0 md:pt-10 print:pt-0">
           <Headline>Erich Lehmann</Headline>
 
           <TextBlock>
@@ -73,7 +73,7 @@ function Home() {
               </div>
             ))}
           </TextBlock>
-          <Headline>Skill</Headline>
+          <Headline>Skills</Headline>
           <TextBlock>
             <p>
               My core skills are shipping product and making sales. I learned this from
@@ -83,6 +83,18 @@ function Home() {
               skills necessary to do it with a team (align the team on a mission, enable
               the devs to ship fast, establish repeatable sales channels, ensure constant
               input of customer feedback).
+            </p>
+            <p className="flex flex-wrap gap-1">
+              {skills.map((skill, i) => {
+                return (
+                  <span
+                    key={i}
+                    className="text-xs font-normal px-2.5 py-1 bg-stone-100 rounded"
+                  >
+                    {skill}
+                  </span>
+                );
+              })}
             </p>
           </TextBlock>
           <Headline>Experiments</Headline>
@@ -233,6 +245,32 @@ const projects = [
       "Next.js, Tailwind, Typescript, Supabase, OpenAI Embeddings, OpenAI GPT-3.5",
     link: "https://library-gpt.vercel.app/",
   },
+];
+
+const skills = [
+  // Soft Skills
+  "Product Management",
+  "Product Design",
+  "UX/UI",
+  "Enterprise Sales",
+  "Copywriting",
+  "Usability Testing",
+  "Full Stack Development",
+  // Hard Skills
+  "Javascript",
+  "Typescript",
+  "React",
+  "Next.js",
+  "Tailwind",
+  "Firebase",
+  "Supabase",
+  "OpenAI GPT Models",
+  "Open AI Embeddings",
+  "Python",
+  // Tools
+  "Figma",
+  "Adobe XD",
+  "Airtable",
 ];
 
 const showLinks = false;
