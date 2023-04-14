@@ -5,7 +5,6 @@ export default function Kurzgesagt({}) {
   return (
     <>
       <Main>
-        {/* <img src="/HR_Birb.svg" alt="HR_Birb" /> */}
         <Headline>
           Liebe Isabella, <br></br> Liebes kurzgesagt Team,
         </Headline>
