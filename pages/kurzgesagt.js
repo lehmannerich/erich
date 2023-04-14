@@ -7,14 +7,14 @@ export default function Kurzgesagt({}) {
       <Main>
         {/* <img src="/HR_Birb.svg" alt="HR_Birb" /> */}
         <Headline>
-          Hello Isabella, <br></br> Hello Kurzgesagt,
+          Liebe Isabella, <br></br> Liebes kurzgesagt Team,
         </Headline>
 
         <TextBlock>
-          <p>A huge fan here.</p>
+          <p>ich bin ein großer Fan.</p>
           <p>
-            Going through my YouTube history, I found the first video that caught my
-            attention:
+            Meine YouTube History zeigt das erste Video, welches meine Neugierde entfacht
+            hat:
           </p>
           <Image
             src="/YT.png"
@@ -25,13 +25,13 @@ export default function Kurzgesagt({}) {
           />
         </TextBlock>
         <TextBlock>
-          That was back in 2015. So much has changed since then. Your audience has
-          expanded from a couple of thousands to several million viewers. I finished my
-          studies and became a founder.
+          Das war 2015. Seitdem ist viel passiert. Eure Fanbase ist von Tausenden auf
+          Millionen gewachsen. Ich habe zwei Unternehmen gegründet und bin ein Experte
+          darin geworden neue Produkte zu bauen.
         </TextBlock>
-        <div className="-mb-7">
+        <div className="-mb-6">
           <Headline>
-            I’m applying for the Senior Product Manager role.
+            Ich bewerbe mich für die Stelle als Senior Project Manager.
             <Image
               src="/HR_Birb.svg"
               width={40}
@@ -42,13 +42,23 @@ export default function Kurzgesagt({}) {
           </Headline>
         </div>
         <TextBlock>
-          I think I can help Kurzgesagt with making things your fans love and find a way
-          to create a recurring revenue stream. The success of the calendar and shop is
-          really great! It speaks to the wonderful fanbase you have. But unfortunately
-          it’s not strictly recurring. Patreon is the only recurring income you currently
-          have, which makes planning difficult. It’s not totally unreasonable to aim for
-          creating a product that blows the calendar revenue out of the water AND is
-          recurring.
+          Ich will euch dabei helfen, Dinge zu schaffen, die eure Fans lieben.
+        </TextBlock>
+        <TextBlock>
+          Der Erfolg des Kalenders und des Shops ist wirklich großartig! Es gibt Zeitpläne
+          zu erstellen und Lieferanten zu verwalten, KPIs zu berechnen… alles mit genügend
+          Weitblick und Fürsorge, damit reichlich Platz für Kreativität bleibt. Ich denke,
+          dass ich das gut hinbekommen würde.
+        </TextBlock>
+        <TextBlock>
+          Aber noch wichtiger ist, wenn Ihr mir den Vorschlag gestattet, dass ich gut
+          darin wäre Produkte zu bauen die eine wiederkehrende Einnahmequelle schaffen.
+          Offensichtlich habt ihr Fans die euch richtig toll finden und euch regelmäßig,
+          monatlich oder jährlich, unterstützen wollen. Man sieht es am Patreon account.
+          Es ist nich unvorstellbar ein kurzgesagt Produkt zu entdecken, dass sogar den
+          Shop überholt UND wiederkehrend Einnahmen generiert. Wer weiß, vielleicht ist
+          das Game an dem ihr arbeitet ja schon genau das. In jedem Fall denke ich, dass
+          es noch viel zu Experimentieren und Entdecken gibt.
         </TextBlock>
       </Main>
     </>
