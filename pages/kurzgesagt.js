@@ -1,3 +1,4 @@
+import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { Headline, Main, TextBlock } from "../components/Structure";
 
@@ -10,10 +11,7 @@ export default function Kurzgesagt({}) {
         </Headline>
 
         <TextBlock>
-          <p>ich bin ein großer Fan.</p>
-          <p>
-            Die YouTube History zeigt das erste Video, welches ich von Euch entdeckt habe:
-          </p>
+          <p>vor 8 Jahren habe ich zum ersten Mal ein Video von euch gesehen:</p>
           <Image
             src="/YT.png"
             width={1280}
@@ -23,9 +21,18 @@ export default function Kurzgesagt({}) {
           />
         </TextBlock>
         <TextBlock>
-          Das war 2015. Seitdem ist viel passiert. Eure Fanbase ist von Tausenden auf
-          Millionen gewachsen. Ich habe zwei Unternehmen gegründet und bin ein Experte
-          darin geworden neue Produkte zu bauen.
+          Das war 2015. Seitdem schaue ich eure Videos regelmäßig und bin ein Fan
+          geworden. Es hat Spaß gemacht eurer Erfolgsgeschichte zuzuschauen. Ihr seid von
+          einer kleinen Agentur zu einer riesen Plattform geworden. So viele Menschen
+          haben in euren Video gesehen was ich auch sehe: eine Liebe für Wissen, Neugierde
+          und Philosophie.
+        </TextBlock>
+        <TextBlock>
+          Auch ich war fleißig in der Zeit. Ich habe mein BWL Studium abgeschlossen und
+          wurde ein Unternehmensberater bei Deloitte Digital. Ich habe schnell gemerkt,
+          dass ich lieber mein eigenes Ding machen möchte. Ich habe mir beigebracht zu
+          Programmieren und habe zwei Unternehmen gegründet. Eines davon war sogar richtig
+          erfolgreich.
         </TextBlock>
         <div className="-mb-6">
           <Headline>
@@ -43,19 +50,19 @@ export default function Kurzgesagt({}) {
           Ich will euch dabei helfen, Dinge zu schaffen, die eure Fans lieben.
         </TextBlock>
         <TextBlock>
-          Der Erfolg des Shops ist wirklich großartig! Aber das bringt natürlich auch
-          viele Aufgaben mit sich. Es gibt Zeitpläne zu erstellen, Lieferanten zu managen,
-          KPIs zu berechnen… alles mit reichlich Weitblick und Fürsorge, damit reichlich
-          Platz für Kreativität bleibt. Ich denke, dass ich das gut hinbekommen würde.
+          Der Erfolg des Shops ist wirklich großartig! Aber er bring viele Aufgaben mit
+          sich. Es gibt Zeitpläne zu erstellen, Lieferanten zu managen, KPIs zu berechnen…
+          alles mit reichlich Weitblick und Fürsorge, damit reichlich Platz für
+          Kreativität bleibt. Ich denke, dass ich das gut hinbekommen würde.
         </TextBlock>
         <TextBlock>
           Aber noch wichtiger ist, wenn Ihr mir den Vorschlag gestattet, dass ich gut
           darin wäre Produkte zu bauen, die eine wiederkehrende Einnahmequelle schaffen.
-          Ihr habt Fans, die euch richtig toll finden und euch regelmäßig, monatlich oder
-          jährlich, unterstützen wollen. Man sieht es am Patreon Account. Es ist nicht
-          undenkbar ein kurzgesagt Produkt zu entwickeln, dass sogar euren Kalender
-          überholt. Wer weiß, vielleicht ist das Game an dem ihr gerade arbeitet ja schon
-          genau das. In jedem Fall gibt es hier viele Chancen.
+          Ihr habt Fans, die euch richtig toll finden und euch regelmäßig unterstützen
+          wollen. Man sieht es am Patreon Account. Es ist nicht undenkbar ein kurzgesagt
+          Produkt zu entwickeln, dass sogar euren Kalender überholt. Wer weiß, vielleicht
+          ist das Game an dem ihr gerade arbeitet ja schon genau das. In jedem Fall gibt
+          es hier viele Chancen.
         </TextBlock>
         <Headline>Produktentwicklung ist etwas, das ich wirklich gut kann.</Headline>
         <TextBlock>
@@ -81,7 +88,20 @@ export default function Kurzgesagt({}) {
           Als ein solcher Fan würde ich die Herausforderung gerne in Angriff nehmen.
         </TextBlock>
         <TextBlock>Viele Grüße</TextBlock>
-        <TextBlock>Erich Lehmann</TextBlock>
+        <TextBlock>
+          {" "}
+          <a
+            href="/"
+            target="_blank"
+            rel="noreferrer"
+            className="-m-2 p-2 rounded flex items-center gap-2 group hover:bg-stone-50 hover:px-4 transition-all"
+          >
+            <div>
+              <p className="">Erich Lehmann</p>
+            </div>
+            <ArrowUpRightIcon className="h-4 w-4 inline text-neutral-400 group-hover:text-neutral-800 transition print:invisible" />
+          </a>{" "}
+        </TextBlock>
       </Main>
     </>
   );
