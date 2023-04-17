@@ -226,8 +226,8 @@ const essays = [
 
 const projects = [
   {
-    title: "Watch me give a super quick demo of all the projects.",
-    description: "Click here, it's worth it 😁",
+    title: "A quick demo of all the projects.",
+    description: "Click here for a fast walkthrough 🙂",
     link: "https://www.loom.com/share/14a7db5c812b438284289c486391bb27",
   },
   {
