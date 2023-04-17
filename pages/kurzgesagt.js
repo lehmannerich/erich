@@ -47,8 +47,8 @@ export default function Kurzgesagt({}) {
           </Headline>
         </div>
         <TextBlock>
-          Mit anderen Worten: ich will euch dabei helfen Produkte zu bauen, weitere
-          Einnahmequellen zu schaffen und eure Fans dabei weiterhin zu begeistern.{" "}
+          Mit anderen Worten: ich will euch dabei helfen Produkte zu entwickeln, die eure
+          Fans begeistern.{" "}
         </TextBlock>
         <TextBlock>
           Der großartige Erfolg eures Shops ist beeindruckend, aber natürlich auch mit
