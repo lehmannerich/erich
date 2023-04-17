@@ -48,7 +48,7 @@ export default function Kurzgesagt({}) {
         </div>
         <TextBlock>
           Mit anderen Worten: ich will euch dabei helfen Produkte zu entwickeln, die eure
-          Fans begeistern.{" "}
+          Fans begeistern.
         </TextBlock>
         <TextBlock>
           Der großartige Erfolg eures Shops ist beeindruckend, aber natürlich auch mit
