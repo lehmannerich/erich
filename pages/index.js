@@ -64,7 +64,14 @@ function Home() {
                 </div>
               )}
               <div className="w-full">
-                <p className="font-medium">{edu.degree}</p>
+                <p className="font-medium">
+                  {edu.degree}{" "}
+                  {edu.link && (
+                    <a href={edu.link} target="_blank" rel="noreferrer">
+                      <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 m-1 text-stone-500 hover:text-stone-800" />
+                    </a>
+                  )}
+                </p>
                 <p className="text-stone-500">
                   {edu.school} {edu.date}
                 </p>
@@ -184,15 +191,17 @@ const experience = [
 const education = [
   {
     school: "Ludwig-Maximilians-Universität München",
-    degree: "Bachelor of Science, Business Administration and Management",
+    degree: "Bachelor of Science, Business Administration",
     date: "2010 - 2014",
     img: "/LMU.jpg",
+    link: "https://www.som.lmu.de/en/index.html",
   },
   {
     school: "Y Combinator",
     degree: "Alumni of Batch W21",
     date: "",
     img: "/YC.jpg",
+    link: "https://www.ycombinator.com/why",
   },
 ];
 
