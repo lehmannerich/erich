@@ -111,7 +111,9 @@ function Home() {
               href={project.link}
               target="_blank"
               rel="noreferrer"
-              className="text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all"
+              className={`text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all ${
+                i === 0 ? " bg-amber-50 border border-amber-400" : ""
+              }`}
             >
               <div>
                 <p className="font-medium">{project.title}</p>
