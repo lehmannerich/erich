@@ -96,7 +96,7 @@ function Home() {
             })}
           </p>
         </TextBlock>
-        <Headline>Experiments</Headline>
+        <Headline>Side Projects</Headline>
         <TextBlock>
           {projects.map((project, i) => (
             <a

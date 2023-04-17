@@ -30,13 +30,13 @@ export default function Kurzgesagt({}) {
         <TextBlock>
           Auch ich war fleißig in der Zeit. Ich habe mein BWL Studium abgeschlossen und
           wurde ein Unternehmensberater bei Deloitte Digital. Ich habe schnell gemerkt,
-          dass ich lieber mein eigenes Ding machen möchte. Ich habe mir beigebracht zu
-          Programmieren und habe zwei Unternehmen gegründet. Eines davon war sogar richtig
-          erfolgreich.
+          dass ich lieber mein eigenes Ding machen möchte. Deshalb habe ich mir
+          beigebracht zu Programmieren und habe zwei Unternehmen gegründet. Eines davon
+          war richtig erfolgreich.
         </TextBlock>
         <div className="-mb-6">
           <Headline>
-            Ich bewerbe mich für die Stelle als Senior Project Manager.
+            Ich möchte mich für die Stelle als Senior Project Manager bewerben.
             <Image
               src="/HR_Birb.svg"
               width={40}
@@ -47,33 +47,36 @@ export default function Kurzgesagt({}) {
           </Headline>
         </div>
         <TextBlock>
-          Ich will euch dabei helfen, Dinge zu schaffen, die eure Fans lieben.
+          Mit anderen Worten: ich will euch dabei helfen Produkte zu bauen, weitere
+          Einnahmequellen zu schaffen und eure Fans dabei weiterhin zu begeistern.{" "}
         </TextBlock>
         <TextBlock>
-          Der Erfolg des Shops ist wirklich großartig! Aber er bring viele Aufgaben mit
-          sich. Es gibt Zeitpläne zu erstellen, Lieferanten zu managen, KPIs zu berechnen…
-          alles mit reichlich Weitblick und Fürsorge, damit reichlich Platz für
-          Kreativität bleibt. Ich denke, dass ich das gut hinbekommen würde.
+          Der großartige Erfolg eures Shops ist beeindruckend, aber natürlich auch mit
+          viel Arbeit verbunden. Der Drop neuer Produkte muss geplant werden, Zeitpläne
+          müssen mit Lieferanten abgestimmt werden und am Ende muss geschaut werden, ob
+          die Fans zufrieden sind und die Produkte profitabel waren. Ich bewerbe mich bei
+          euch, weil ich diese Arbeit gut machen würde.
         </TextBlock>
         <TextBlock>
-          Aber noch wichtiger ist, wenn Ihr mir den Vorschlag gestattet, dass ich gut
-          darin wäre Produkte zu bauen, die eine wiederkehrende Einnahmequelle schaffen.
-          Ihr habt Fans, die euch richtig toll finden und euch regelmäßig unterstützen
-          wollen. Man sieht es am Patreon Account. Es ist nicht undenkbar ein kurzgesagt
-          Produkt zu entwickeln, dass sogar euren Kalender überholt. Wer weiß, vielleicht
-          ist das Game an dem ihr gerade arbeitet ja schon genau das. In jedem Fall gibt
-          es hier viele Chancen.
+          Aber noch wichtiger ist, dass ich gut darin wäre neue Produkte für eure Fans zu
+          entwickeln. Und damit lege ein besonderes Augenmerk auf digitale Produkte mit
+          wiederkehrenden Einnahmequellen. An eurem Patreon Account sieht man, dass viele
+          Menschen euch regelmäßig unterstützen wollen. Obwohl es nur ein zehntel der
+          Einnahmen ausmacht, ist es eine der wichtigsten Einnahmequellen, weil sie so
+          verlässlich ist. Es ist nicht undenkbar ein kurzgesagt Produkt zu entwickeln,
+          dass sogar euren Kalender überholt und gleichzeitig monthly &#39;recurring&#39;
+          ist. Wer weiß, vielleicht erfüllt das Game an dem ihr gerade arbeitet ja schon
+          genau diesen Zweck. In jedem Fall sehe ich hier viele Chancen.
         </TextBlock>
-        <Headline>Produktentwicklung ist etwas, das ich wirklich gut kann.</Headline>
+        <Headline>Ich baue schon seit über 10 Jahren digitale Produkte -</Headline>
         <TextBlock>
-          Ich baue seit über 10 Jahren Produkte - zuerst ganz alleine neben dem Studium,
-          und dann ganz professionell mit einem Team und echten Kunden. Das erfolgreichste
-          Produkt das ich gebaut habe ist MeetAnyway, eine Plattform für
-          Online-Veranstaltungen. Wir hatten über 30.000 Teilnehmer und haben bis zu
-          40.000 € pro Veranstaltung verdient. Ich habe MeetAnyway mit zwei Freunden
-          gegründet und war hauptsächlich für Produkt und Sales verantwortlich. Wir wurden
-          vom Y Combinator aufgenommen. YC hat mir nochmal einen Wissensschub gegeben
-          darin, wie man Produkte baut, die Menschen wirklich haben wollen.
+          zuerst ganz alleine als Freelancer neben dem Studium, und dann ganz
+          professionell in verschiedenen Teams und für anspruchsvolle Kunden. Das
+          erfolgreichste Produkt das ich gebaut habe ist MeetAnyway, eine Plattform für
+          Online-Veranstaltungen. Wir hatten über 30.000 Teilnehmer und unsere Plattform
+          wurde von renommierten Instituten genutzt, wie das Max-Planck-Institut oder der
+          Fraunhofer Gesellschaft. Ich habe MeetAnyway mit zwei Freunden gegründet und war
+          für das Produkt und für Sales verantwortlich.
         </TextBlock>
         <TextBlock>
           Letztendlich können nur eure Fans sagen, was die richtigen nächsten Schritte
