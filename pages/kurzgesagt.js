@@ -22,16 +22,16 @@ export default function Kurzgesagt({}) {
         </TextBlock>
         <TextBlock>
           Das war 2015. Seitdem schaue ich eure Videos regelmäßig und bin ein Fan
-          geworden. Es hat Spaß gemacht eurer Erfolgsgeschichte zuzuschauen. Ihr seid von
-          einer kleinen Agentur zu einer riesen Plattform geworden. So viele Menschen
-          haben in euren Video gesehen was ich auch sehe: eine Liebe für Wissen, Neugierde
-          und Philosophie.
+          geworden. Es hat Spaß gemacht, eurer Erfolgsgeschichte zuzuschauen. Ihr seid von
+          einer kleinen Agentur zu einer sehr großen Plattform herangewachsen. So viele
+          Menschen haben in euren Videos gesehen, was ich auch sehe: eine Liebe für
+          Wissen, Neugierde und Philosophie.
         </TextBlock>
         <TextBlock>
-          Auch ich war fleißig in der Zeit. Ich habe mein BWL Studium abgeschlossen und
+          Auch ich war fleißig in der Zeit. Ich habe mein BWL-Studium abgeschlossen und
           wurde ein Unternehmensberater bei Deloitte Digital. Ich habe schnell gemerkt,
           dass ich lieber mein eigenes Ding machen möchte. Deshalb habe ich mir
-          beigebracht zu Programmieren und habe zwei Unternehmen gegründet. Eines davon
+          beigebracht zu programmieren und habe zwei Unternehmen gegründet. Eines davon
           war richtig erfolgreich.
         </TextBlock>
         <div className="-mb-6">
@@ -59,12 +59,12 @@ export default function Kurzgesagt({}) {
         </TextBlock>
         <TextBlock>
           Aber noch wichtiger ist, dass ich gut darin wäre neue Produkte für eure Fans zu
-          entwickeln. Und damit lege ein besonderes Augenmerk auf digitale Produkte mit
+          entwickeln. Ich lege hier ein besonderes Augenmerk auf digitale Produkte mit
           wiederkehrenden Einnahmequellen. An eurem Patreon Account sieht man, dass viele
-          Menschen euch regelmäßig unterstützen wollen. Obwohl es nur ein zehntel der
+          Menschen euch regelmäßig unterstützen wollen. Obwohl es nur ein Zehntel der
           Einnahmen ausmacht, ist es eine der wichtigsten Einnahmequellen, weil sie so
           verlässlich ist. Es ist nicht undenkbar ein kurzgesagt Produkt zu entwickeln,
-          dass sogar euren Kalender überholt und gleichzeitig monthly &#39;recurring&#39;
+          das sogar euren Kalender überholt und gleichzeitig &#39;monthly recurring&#39;
           ist. Wer weiß, vielleicht erfüllt das Game an dem ihr gerade arbeitet ja schon
           genau diesen Zweck. In jedem Fall sehe ich hier viele Chancen.
         </TextBlock>
@@ -79,16 +79,11 @@ export default function Kurzgesagt({}) {
           für das Produkt und für Sales verantwortlich.
         </TextBlock>
         <TextBlock>
-          Letztendlich können nur eure Fans sagen, was die richtigen nächsten Schritte
-          sind. Ich wette, dass es manchmal einen Konflikt gibt zwischen eurer Mission
-          (Wissenschaft für alle frei zugänglich zu machen) und harten wirtschaftlichen
-          Realitäten (60 Personen, die ihren Lebensunterhalt verdienen müssen). Die
-          Herausforderung eines Project Managers besteht hier darin Geld zu verdienen ohne
-          jemals auch nur im Geringsten das Vertrauen zu beeinträchtigen, das kurzgesagt
-          bei seinen Fans aufgebaut hat.
-        </TextBlock>
-        <TextBlock>
-          Als ein solcher Fan würde ich die Herausforderung gerne in Angriff nehmen.
+          Die Herausforderung eines Project Managers besteht hier darin Geld zu verdienen
+          ohne jemals das Vertrauen der Fan zu beeinträchtigen. Ganz im Gegenteil - am
+          besten schafft es jedes Produkt das Vertrauen der Fans in kurzgesagt noch weiter
+          zu festigen. Als ein solcher Fan würde ich die Herausforderung gerne in Angriff
+          nehmen.
         </TextBlock>
         <TextBlock>Viele Grüße</TextBlock>
         <TextBlock>
