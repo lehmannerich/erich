@@ -226,6 +226,11 @@ const essays = [
 
 const projects = [
   {
+    title: "Watch me give a super quick demo of all the projects.",
+    description: "Click here, it's worth it 😁",
+    link: "https://www.loom.com/share/14a7db5c812b438284289c486391bb27",
+  },
+  {
     title: "UX Swaps",
     description: "Next.js, Tailwind, Firebase",
     link: "https://www.uxswaps.com/",
@@ -240,6 +245,11 @@ const projects = [
     description:
       "Next.js, Tailwind, Typescript, Supabase, OpenAI Embeddings, OpenAI GPT-3.5",
     link: "https://library-gpt.vercel.app/",
+  },
+  {
+    title: "YC Investments Simulator",
+    description: "Vue.js, Bootstrap",
+    link: "https://investment-sim.netlify.app/",
   },
 ];
 
