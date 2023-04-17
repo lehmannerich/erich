@@ -135,16 +135,56 @@ function Home() {
             >
               <div>
                 <p className="font-medium">{essay.title}</p>
-                <p className="text-stone-500">{essay.description}</p>
+                <p className="text-stone-500">{essay.link}</p>
               </div>
               <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
             </a>
           ))}
         </TextBlock>
+        <Headline>Contact</Headline>
+        <TextBlock>
+          <div className="text-sm flex gap-4">
+            {contact.map((c, i) => (
+              <a
+                key={i}
+                href={c.link}
+                target="_blank"
+                rel="noreferrer"
+                className="text-neutral-500 hover:text-black transition"
+              >
+                {c.name}
+                <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1" />
+              </a>
+            ))}
+          </div>
+        </TextBlock>
       </Main>
     </>
   );
 }
+
+const contact = [
+  {
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/erichlehmann/",
+  },
+  {
+    name: "Twitter",
+    link: "https://twitter.com/lehmannerich",
+  },
+  {
+    name: "Substack",
+    link: "https://substack.com/profile/1536365-erich-lehmann",
+  },
+  {
+    name: "Github",
+    link: "https://github.com/lehmannerich/",
+  },
+  {
+    name: "Email",
+    link: "mailto:erich@meetanyway.com",
+  },
+];
 
 const getTimeFromJan2018 = () => {
   const jan2018 = new Date(2018, 0, 1);
