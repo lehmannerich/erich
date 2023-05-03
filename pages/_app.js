@@ -1,7 +1,7 @@
 import { Analytics } from "@vercel/analytics/react";
-
 import "@vercel/examples-ui/globals.css";
 import Head from "next/head";
+import Script from "next/script";
 
 function App({ Component, pageProps }) {
   return (
@@ -12,6 +12,20 @@ function App({ Component, pageProps }) {
       </Head>
       <Component {...pageProps} />
       <Analytics />
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.chatbaseConfig = {
+              chatbotId: "CRzsg2kg93IXjoDn9ICpJ",
+            };
+          `,
+        }}
+      />
+      <Script
+        src="https://www.chatbase.co/embed.min.js"
+        id="CRzsg2kg93IXjoDn9ICpJ"
+        defer
+      />
     </>
   );
 }
