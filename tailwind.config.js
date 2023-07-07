@@ -10,6 +10,9 @@ module.exports = {
       screens: {
         print: { raw: "print" },
       },
+      fontFamily: {
+        robotocon: ["Roboto Condensed", "sans-serif"],
+      },
     },
   },
   plugins: [],

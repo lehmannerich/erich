@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -56,4 +58,11 @@
   .text-quaternary {
     @apply text-black/40 dark:text-white/40;
   }
+}
+
+/* Inside styles/globals.css */
+
+.condensed {
+  font-family: 'Roboto Condensed', sans-serif !important;
+  color: #000;
 }
