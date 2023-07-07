@@ -61,8 +61,6 @@
 }
 
 /* Inside styles/globals.css */
-
-.condensed {
-  font-family: 'Roboto Condensed', sans-serif !important;
-  color: #000;
+.grey {
+  background-color: #0E1113 !important;
 }
