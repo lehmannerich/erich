@@ -14,12 +14,12 @@ export default function Kurzgesagt({}) {
   }, []);
 
   // Different depths for different layers:
-  const depth1 = -0.1;
+  const depth1 = 0;
   const depth2 = -0.2;
-  const depth3 = -0.3;
-  const depth4 = -0.1;
+  const depth3 = -0.4;
+  const depth4 = -0.5;
 
-  const maxScroll = 5;
+  const maxScroll = 50;
 
   // Then limit the translateY values:
   const translateY1 = Math.min(offsetY * depth1, maxScroll);
@@ -101,7 +101,13 @@ export default function Kurzgesagt({}) {
             style={{ transform: `translateY(${translateY4}px)` }}
           />
         </div>
-        <main className="mx-auto max-w-5xl grey text-white py-48">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          // this doesn't work for some reason
+          className="mx-auto max-w-5xl grey text-white py-48"
+        >
           <div className="flex">
             <div place="left" className="grid content-center max-w-lg">
               <div className="text-lg font-bold">
@@ -123,7 +129,7 @@ export default function Kurzgesagt({}) {
               <img src="/people/erich.png" alt="Erich Lehmann" className="rounded" />
             </div>
           </div>
-        </main>
+        </motion.div>
         <footer>
           <div className="mx-auto max-w-5xl grey text-white py-12">footer</div>
         </footer>
