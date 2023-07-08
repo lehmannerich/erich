@@ -181,6 +181,10 @@ const contact = [
     link: "https://github.com/lehmannerich/",
   },
   {
+    name: "Podcast",
+    link: "/podcast",
+  },
+  {
     name: "Email",
     link: "mailto:erich@meetanyway.com",
   },

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Kurzgesagt({}) {
@@ -129,9 +130,43 @@ export default function Kurzgesagt({}) {
               <img src="/people/erich.png" alt="Erich Lehmann" className="rounded" />
             </div>
           </div>
+          <div className="grid content-center justify-end">
+            <div className="flex gap-2 mt-8 ">
+              {platforms.map((platform) => (
+                <a
+                  key={platform.name}
+                  href={platform.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-3 px-14 bg-zinc-900 rounded text-center hover:bg-zinc-800 transition-all"
+                >
+                  <p className="mb-1 font-medium text-sm">Watch on</p>
+                  <Image
+                    src={platform.logo}
+                    alt={platform.name}
+                    width={100}
+                    height={50}
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
         </motion.div>
-        <footer>
-          <div className="mx-auto max-w-5xl grey text-white py-12">footer</div>
+        <footer className="mx-auto max-w-5xl grey text-white py-12 flex justify-between text-sm">
+          <div className="">
+            <div className=" uppercase font-extrabold">Lehmann Podcast</div>
+            <div className="text-xs text-zinc-500 mt-2">
+              Copyright Erich Lehmann 2023, All rights reserved.
+            </div>
+          </div>
+          <div className="text-zinc-500 flex gap-4 font-semibold">
+            <Link href="/" className="hover:underline">
+              About Erich
+            </Link>
+            {/* <Link href="/imprint" className="hover:underline">
+              Imprint
+            </Link> */}
+          </div>
         </footer>
       </div>
     </>
