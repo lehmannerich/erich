@@ -115,7 +115,7 @@ export default function Kurzgesagt({}) {
                 who have shaped industries, defined culture and achieved greatness.
               </div>
               <div className="text-base mt-4">
-                Erich Lehmann, a thriving entrepreneur and esteemed Y Combinator alumnus,
+                Erich Lehmann, a successful founder and esteemed Y Combinator alumnus,
                 invites some of the most impactful people, scholars, and founders to join
                 him on a quest driven by pure curiosity.
               </div>
