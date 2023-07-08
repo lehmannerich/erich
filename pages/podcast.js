@@ -120,8 +120,8 @@ export default function Kurzgesagt({}) {
                 him on a quest driven by pure curiosity.
               </div>
               <div className="text-base mt-4">
-                The Lehmann Podcast is special because it's honest. Conversations
-                transcends the usual confines of an interview - at best it's a
+                The Lehmann Podcast is special because it&apos;s honest. Conversations
+                transcends the usual confines of an interview - at best it&apos;s a
                 conversation that is both captivating and educational.
               </div>
             </div>
