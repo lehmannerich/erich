@@ -1,7 +1,32 @@
+import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Kurzgesagt({}) {
+  const [offsetY, setOffsetY] = useState(0);
+  const handleScroll = () => setOffsetY(window.pageYOffset);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Different depths for different layers:
+  const depth1 = -0.1;
+  const depth2 = -0.2;
+  const depth3 = -0.3;
+  const depth4 = -0.1;
+
+  const maxScroll = 5;
+
+  // Then limit the translateY values:
+  const translateY1 = Math.min(offsetY * depth1, maxScroll);
+  const translateY2 = Math.min(offsetY * depth2, maxScroll);
+  const translateY3 = Math.min(offsetY * depth3, maxScroll);
+  const translateY4 = Math.min(offsetY * depth4, maxScroll);
+
   return (
     <>
       <Head>
@@ -50,15 +75,31 @@ export default function Kurzgesagt({}) {
             </div>
           </div>
         </main>
-        <div className="grid grid-cols-10 gap-1 max-h-[290px] overflow-hidden max-w-screen-xl mx-auto rounded">
-          <img
+        <div className="grid grid-cols-10 gap-1 max-h-[290px] max-w-screen-xl mx-auto rounded">
+          <motion.img
             src="/people/rainer.png"
             alt="Rainer Maria Schiessler"
             className="col-span-4"
+            style={{ transform: `translateY(${translateY1}px)` }}
           />
-          <img src="/people/joern.png" alt="Joern" className="col-span-2" />
-          <img src="/people/coletta.png" alt="Coletta" className="col-span-2" />
-          <img src="/people/jost.png" alt="Jost" className="col-span-2" />
+          <motion.img
+            src="/people/joern.png"
+            alt="Joern"
+            className="col-span-2"
+            style={{ transform: `translateY(${translateY2}px)` }}
+          />
+          <motion.img
+            src="/people/coletta.png"
+            alt="Coletta"
+            className="col-span-2"
+            style={{ transform: `translateY(${translateY3}px)` }}
+          />
+          <motion.img
+            src="/people/jost.png"
+            alt="Jost"
+            className="col-span-2"
+            style={{ transform: `translateY(${translateY4}px)` }}
+          />
         </div>
         <main className="mx-auto max-w-5xl grey text-white py-48">
           <div className="flex">
