@@ -35,26 +35,33 @@ export default function Kurzgesagt({}) {
         <title>Lehmann Podcast</title>
       </Head>
       <div className="bg-black">
-        <main className="mx-auto max-w-5xl bg-black text-white py-24">
-          <div className="flex">
-            <div place="left" className="grid content-center ">
+        <main className="mx-auto max-w-5xl bg-black text-white py-8 md:py-24 px-6">
+          <div className="md:flex md:flex-row-reverse">
+            <div className="max-w-sm mx-auto">
+              <img
+                src="/erich-lehmann-darkbg.jpg"
+                alt="Erich Lehmann"
+                className="h-full w-full"
+              />
+            </div>
+            <div className="grid content-center ">
               <Image
                 src="/lehmannpod.svg"
                 alt="Lehmann Podcast"
-                width={300}
+                width={290}
                 height={100}
               />
               <div className="text-lg">
                 Conversations about philosophy, science and business.
               </div>
-              <div className="flex gap-2 mt-8 ">
+              <div className="flex flex-col md:flex-row gap-2 mt-8 ">
                 {platforms.map((platform) => (
                   <a
                     key={platform.name}
                     href={platform.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="py-3 px-14 bg-zinc-900 rounded text-center hover:bg-zinc-800 transition-all"
+                    className="py-3 px-14 bg-zinc-900 rounded text-center hover:bg-zinc-800 transition-all grid justify-center"
                   >
                     <p className="mb-1 font-medium text-sm">Watch on</p>
                     <Image
@@ -67,38 +74,31 @@ export default function Kurzgesagt({}) {
                 ))}
               </div>
             </div>
-            <div place="right" className="max-w-sm mx-auto">
-              <img
-                src="/erich-lehmann-darkbg.jpg"
-                alt="Erich Lehmann"
-                className="h-full"
-              />
-            </div>
           </div>
         </main>
-        <div className="grid grid-cols-10 gap-1 max-h-[290px] max-w-screen-xl mx-auto rounded">
+        <div className="grid grid-cols-10 gap-1 max-h-[290px] max-w-screen-xl mx-auto ">
           <motion.img
             src="/people/rainer.png"
             alt="Rainer Maria Schiessler"
-            className="col-span-4"
+            className="col-span-6 md:col-span-4 rounded"
             style={{ transform: `translateY(${translateY1}px)` }}
           />
           <motion.img
             src="/people/joern.png"
             alt="Joern"
-            className="col-span-2"
+            className="col-span-4 md:col-span-2 rounded"
             style={{ transform: `translateY(${translateY2}px)` }}
           />
           <motion.img
             src="/people/coletta.png"
             alt="Coletta"
-            className="col-span-2"
+            className="col-span-5 md:col-span-2 rounded"
             style={{ transform: `translateY(${translateY3}px)` }}
           />
           <motion.img
             src="/people/jost.png"
             alt="Jost"
-            className="col-span-2"
+            className="col-span-5 md:col-span-2 rounded"
             style={{ transform: `translateY(${translateY4}px)` }}
           />
         </div>
