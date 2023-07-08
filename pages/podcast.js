@@ -17,8 +17,8 @@ export default function Kurzgesagt({}) {
   // Different depths for different layers:
   const depth1 = 0;
   const depth2 = -0.2;
-  const depth3 = -0.4;
-  const depth4 = -0.5;
+  const depth3 = -0.3;
+  const depth4 = -0.4;
 
   const maxScroll = 50;
 
@@ -54,25 +54,7 @@ export default function Kurzgesagt({}) {
               <div className="text-lg">
                 Conversations about philosophy, science and business.
               </div>
-              <div className="flex flex-col md:flex-row gap-2 mt-8 ">
-                {platforms.map((platform) => (
-                  <a
-                    key={platform.name}
-                    href={platform.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="py-3 px-14 bg-zinc-900 rounded text-center hover:bg-zinc-800 transition-all grid justify-center"
-                  >
-                    <p className="mb-1 font-medium text-sm">Watch on</p>
-                    <Image
-                      src={platform.logo}
-                      alt={platform.name}
-                      width={100}
-                      height={50}
-                    />
-                  </a>
-                ))}
-              </div>
+              <Platforms />
             </div>
           </div>
         </main>
@@ -102,16 +84,13 @@ export default function Kurzgesagt({}) {
             style={{ transform: `translateY(${translateY4}px)` }}
           />
         </div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          // this doesn't work for some reason
-          className="mx-auto max-w-5xl grey text-white py-48"
-        >
-          <div className="flex">
-            <div place="left" className="grid content-center max-w-lg">
-              <div className="text-lg font-bold">
+        <motion.div className="mx-auto max-w-5xl grey text-white md:py-48 px-4">
+          <div className="md:flex md:flex-row-reverse">
+            <div place="right" className="max-w-lg grid">
+              <img src="/people/erich.png" alt="Erich Lehmann" className="rounded" />
+            </div>
+            <div place="left" className="grid items-center">
+              <div className="text-lg font-bold mt-8 md:mt-0">
                 The Lehmann Podcast is an unguarded exploration into the stories of people
                 who have shaped industries, defined culture and achieved greatness.
               </div>
@@ -126,41 +105,18 @@ export default function Kurzgesagt({}) {
                 conversation that is both captivating and educational.
               </div>
             </div>
-            <div place="right" className="max-w-sm grid mx-auto">
-              <img src="/people/erich.png" alt="Erich Lehmann" className="rounded" />
-            </div>
           </div>
-          <div className="grid content-center justify-end">
-            <div className="flex gap-2 mt-8 ">
-              {platforms.map((platform) => (
-                <a
-                  key={platform.name}
-                  href={platform.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="py-3 px-14 bg-zinc-900 rounded text-center hover:bg-zinc-800 transition-all"
-                >
-                  <p className="mb-1 font-medium text-sm">Watch on</p>
-                  <Image
-                    src={platform.logo}
-                    alt={platform.name}
-                    width={100}
-                    height={50}
-                  />
-                </a>
-              ))}
-            </div>
-          </div>
+          <Platforms />
         </motion.div>
-        <footer className="mx-auto max-w-5xl grey text-white py-12 flex justify-between text-sm">
+        <footer className="mx-auto max-w-5xl grey text-white py-12 md:flex justify-between text-sm px-4">
           <div className="">
             <div className=" uppercase font-extrabold">Lehmann Podcast</div>
             <div className="text-xs text-zinc-500 mt-2">
               Copyright Erich Lehmann 2023, All rights reserved.
             </div>
           </div>
-          <div className="text-zinc-500 flex gap-4 font-semibold">
-            <Link href="/" className="hover:underline">
+          <div className="text-zinc-500 flex gap-4 font-semibold mt-4">
+            <Link href="/" className="underline hover:no-underline">
               About Erich
             </Link>
             {/* <Link href="/imprint" className="hover:underline">
@@ -170,6 +126,25 @@ export default function Kurzgesagt({}) {
         </footer>
       </div>
     </>
+  );
+}
+
+function Platforms() {
+  return (
+    <div className="flex flex-col md:flex-row gap-2 mt-8 ">
+      {platforms.map((platform) => (
+        <a
+          key={platform.name}
+          href={platform.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="py-3 px-14 bg-zinc-800 rounded text-center hover:bg-zinc-700 transition-all grid justify-center"
+        >
+          <p className="mb-1 font-medium text-sm">Watch on</p>
+          <Image src={platform.logo} alt={platform.name} width={100} height={50} />
+        </a>
+      ))}
+    </div>
   );
 }
 
