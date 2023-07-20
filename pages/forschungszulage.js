@@ -31,7 +31,7 @@ export default function Kurzgesagt({}) {
   return (
     <>
       <Head>
-        <title>Lehmann Podcast</title>
+        <title>Forschungszulage</title>
       </Head>
       <div className="bg-black">
         <main className="mx-auto max-w-5xl bg-black text-white py-8 md:py-24 px-6">
