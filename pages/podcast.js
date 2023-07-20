@@ -2,32 +2,8 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function Kurzgesagt({}) {
-  const [offsetY, setOffsetY] = useState(0);
-  const handleScroll = () => setOffsetY(window.pageYOffset);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Different depths for different layers:
-  const depth1 = 0;
-  const depth2 = -0.2;
-  const depth3 = -0.3;
-  const depth4 = -0.4;
-
-  const maxScroll = 50;
-
-  // Then limit the translateY values:
-  const translateY1 = Math.min(offsetY * depth1, maxScroll);
-  const translateY2 = Math.min(offsetY * depth2, maxScroll);
-  const translateY3 = Math.min(offsetY * depth3, maxScroll);
-  const translateY4 = Math.min(offsetY * depth4, maxScroll);
-
   return (
     <>
       <Head>
@@ -40,7 +16,8 @@ export default function Kurzgesagt({}) {
               <Image
                 src="/erich-lehmann-darkbg.jpg"
                 alt="Erich Lehmann"
-                fill
+                width={1934}
+                height={2578}
                 className="h-full w-full cover"
               />
             </div>
@@ -58,36 +35,16 @@ export default function Kurzgesagt({}) {
             </div>
           </div>
         </main>
-        <div className="grid grid-cols-10 gap-1 max-h-[290px] max-w-screen-xl mx-auto ">
-          <motion.img
-            src="/people/rainer.png"
-            alt="Rainer Maria Schiessler"
-            className="col-span-6 md:col-span-4 rounded"
-            style={{ transform: `translateY(${translateY1}px)` }}
-          />
-          <motion.img
-            src="/people/joern.png"
-            alt="Joern"
-            className="col-span-4 md:col-span-2 rounded"
-            style={{ transform: `translateY(${translateY2}px)` }}
-          />
-          <motion.img
-            src="/people/coletta.png"
-            alt="Coletta"
-            className="col-span-5 md:col-span-2 rounded"
-            style={{ transform: `translateY(${translateY3}px)` }}
-          />
-          <motion.img
-            src="/people/jost.png"
-            alt="Jost"
-            className="col-span-5 md:col-span-2 rounded"
-            style={{ transform: `translateY(${translateY4}px)` }}
-          />
-        </div>
         <motion.div className="mx-auto max-w-5xl grey text-white md:py-48 px-4">
           <div className="md:flex md:flex-row-reverse">
             <div place="right" className="max-w-lg grid">
-              <Image src="/people/erich.png" alt="Erich Lehmann" className="rounded" />
+              <Image
+                src="/people/erich.png"
+                alt="Erich Lehmann"
+                className="rounded"
+                width={1280}
+                height={1042}
+              />
             </div>
             <div place="left" className="grid items-center">
               <div className="text-lg font-bold mt-8 md:mt-0">
