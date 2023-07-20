@@ -1,6 +1,6 @@
 import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
-import { Headline, Main, TextBlock } from "../components/Structure";
+import { Headline, Main, TextBlock } from "../../components/Structure";
 
 export default function Kurzgesagt({}) {
   return (
