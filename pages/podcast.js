@@ -86,9 +86,9 @@ export default function Kurzgesagt({}) {
           />
         </div>
 
-        <motion.div className="mx-auto max-w-5xl grey text-white py-12 pt-12 px-4">
+        <motion.div className="mx-auto max-w-5xl grey text-white py-8 pt-20 md:pt-48 px-4">
           {
-            <div className="grid gap-6">
+            <div className="grid gap-2 md:gap-6">
               {reviews.map((review) => (
                 <motion.img
                   key={review.path}
@@ -96,10 +96,14 @@ export default function Kurzgesagt({}) {
                   alt="review"
                   className="rounded"
                   // fly in from the left but only when it scroll is more than 50
-
                   initial={{ x: -100, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 1 }}
+                  // add transition speed
+                  whileInView={{
+                    x: 0,
+                    opacity: 1,
+                    transition: { delay: 0.4, duration: 0.8, ease: "easeOut" },
+                  }}
+                  // animate={{ x: 0, opacity: 1 }}
                 />
               ))}
             </div>
