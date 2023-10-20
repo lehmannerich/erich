@@ -19,7 +19,6 @@ export default function Kurzgesagt({}) {
   const depth2 = -0.2;
   const depth3 = -0.3;
   const depth4 = -0.4;
-
   const maxScroll = 50;
 
   // Then limit the translateY values:
@@ -42,6 +41,8 @@ export default function Kurzgesagt({}) {
                 alt="Erich Lehmann"
                 width={1934}
                 height={2578}
+                placeholder="blur"
+                blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNcUw8AAd0BLYXeJFEAAAAASUVORK5CYII="
                 className="h-full w-full cover"
               />
             </div>
@@ -121,17 +122,17 @@ export default function Kurzgesagt({}) {
                 height={1042}
               />
             </div>
-            <div place="left" className="grid items-center">
-              <div className="text-lg font-bold mt-8 md:mt-0">
+            <div place="left" className="grid gap-4">
+              <div className="text-lg font-bold mt-8">
                 The Lehmann Podcast is an unguarded exploration into the stories of people
                 who have shaped industries and defined culture.
               </div>
-              <div className="text-base mt-4">
+              <div className="text-base">
                 Erich Lehmann, a successful founder and esteemed Y Combinator alumnus,
                 invites some of the most impactful people, scholars, and founders to join
                 him on a quest driven by pure curiosity.
               </div>
-              <div className="text-base mt-4">
+              <div className="text-base">
                 The Lehmann Podcast is special because it&apos;s honest. Conversations
                 transcends the usual confines of an interview - at best it&apos;s a
                 conversation that is both captivating and educational.
