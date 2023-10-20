@@ -85,6 +85,26 @@ export default function Kurzgesagt({}) {
             style={{ transform: `translateY(${translateY4}px)` }}
           />
         </div>
+
+        <motion.div className="mx-auto max-w-5xl grey text-white py-12 pt-12 px-4">
+          {
+            <div className="grid gap-6">
+              {reviews.map((review) => (
+                <motion.img
+                  key={review.path}
+                  src={review.path}
+                  alt="review"
+                  className="rounded"
+                  // fly in from the left but only when it come into view
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 1 }}
+                />
+              ))}
+            </div>
+          }
+        </motion.div>
+
         <motion.div className="mx-auto max-w-5xl grey text-white md:py-48 px-4">
           <div className="md:flex md:flex-row-reverse">
             <div place="right" className="max-w-lg grid">
@@ -154,6 +174,21 @@ function Platforms() {
     </div>
   );
 }
+
+const reviews = [
+  {
+    path: "/reviews/e1.png",
+  },
+  {
+    path: "/reviews/e2.png",
+  },
+  {
+    path: "/reviews/e3.png",
+  },
+  {
+    path: "/reviews/e4.png",
+  },
+];
 
 const platforms = [
   {
