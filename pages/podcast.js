@@ -95,7 +95,8 @@ export default function Kurzgesagt({}) {
                   src={review.path}
                   alt="review"
                   className="rounded"
-                  // fly in from the left but only when it come into view
+                  // fly in from the left but only when it scroll is more than 50
+
                   initial={{ x: -100, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 1 }}
@@ -119,7 +120,7 @@ export default function Kurzgesagt({}) {
             <div place="left" className="grid items-center">
               <div className="text-lg font-bold mt-8 md:mt-0">
                 The Lehmann Podcast is an unguarded exploration into the stories of people
-                who have shaped industries, defined culture and achieved greatness.
+                who have shaped industries and defined culture.
               </div>
               <div className="text-base mt-4">
                 Erich Lehmann, a successful founder and esteemed Y Combinator alumnus,
