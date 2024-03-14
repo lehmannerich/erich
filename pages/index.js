@@ -1,5 +1,6 @@
 import { ArrowTopRightOnSquareIcon, ArrowUpRightIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import Script from "next/script";
 import { Headline, Main, TextBlock } from "../components/Structure";
 
 function Home() {
@@ -158,6 +159,11 @@ function Home() {
             ))}
           </div>
         </TextBlock>
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8270843836660200"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
       </Main>
     </>
   );
