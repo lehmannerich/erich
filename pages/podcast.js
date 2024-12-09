@@ -10,18 +10,15 @@ export default function Kurzgesagt({}) {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Different depths for different layers:
   const depth1 = 0;
   const depth2 = -0.2;
   const depth3 = -0.3;
   const depth4 = -0.4;
   const maxScroll = 50;
 
-  // Then limit the translateY values:
   const translateY1 = Math.min(offsetY * depth1, maxScroll);
   const translateY2 = Math.min(offsetY * depth2, maxScroll);
   const translateY3 = Math.min(offsetY * depth3, maxScroll);
@@ -96,15 +93,12 @@ export default function Kurzgesagt({}) {
                   src={review.path}
                   alt="review"
                   className="rounded"
-                  // fly in from the left but only when it scroll is more than 50
                   initial={{ x: -100, opacity: 0 }}
-                  // add transition speed
                   whileInView={{
                     x: 0,
                     opacity: 1,
                     transition: { delay: 0.4, duration: 0.8, ease: "easeOut" },
                   }}
-                  // animate={{ x: 0, opacity: 1 }}
                 />
               ))}
             </div>
@@ -134,7 +128,7 @@ export default function Kurzgesagt({}) {
               </div>
               <div className="text-base">
                 The Lehmann Podcast is special because it&apos;s honest. Conversations
-                transcends the usual confines of an interview - at best it&apos;s a
+                transcend the usual confines of an interview - at best it&apos;s a
                 conversation that is both captivating and educational.
               </div>
             </div>
@@ -152,9 +146,6 @@ export default function Kurzgesagt({}) {
             <Link href="/" className="underline hover:no-underline">
               About Erich
             </Link>
-            {/* <Link href="/imprint" className="hover:underline">
-              Imprint
-            </Link> */}
           </div>
         </footer>
       </div>
