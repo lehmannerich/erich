@@ -80,50 +80,6 @@ function Home() {
             </div>
           ))}
         </TextBlock>
-        <Headline>Skills</Headline>
-        <TextBlock>
-          <p>
-            My core skills are shipping product and making sales. I learned this from
-            building my companies, from reading Paul Graham and Jason Fried and from being
-            coached by YC partners. I have all the skills necessary to do it all alone
-            (build a full stack app, reach out to customers). And I have all the skills
-            necessary to do it with a team (align the team on a mission, enable the devs
-            to ship fast, establish repeatable sales channels, ensure constant input of
-            customer feedback).
-          </p>
-          <p className="flex flex-wrap gap-1">
-            {skills.map((skill, i) => {
-              return (
-                <span
-                  key={i}
-                  className="text-xs font-normal px-2.5 py-1 bg-stone-100 rounded border print:bg-white"
-                >
-                  {skill}
-                </span>
-              );
-            })}
-          </p>
-        </TextBlock>
-        <Headline>Side Projects</Headline>
-        <TextBlock>
-          {projects.map((project, i) => (
-            <a
-              key={i}
-              href={project.link}
-              target="_blank"
-              rel="noreferrer"
-              className={`text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all ${
-                i === 0 ? " bg-amber-50 border border-amber-400" : ""
-              }`}
-            >
-              <div>
-                <p className="font-medium">{project.title}</p>
-                <p className="text-stone-500">{project.description}</p>
-              </div>
-              <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
-            </a>
-          ))}
-        </TextBlock>
         <Headline>Essays</Headline>
         <TextBlock>
           {essays.map((essay, i) => (
@@ -137,6 +93,24 @@ function Home() {
               <div>
                 <p className="font-medium">{essay.title}</p>
                 <p className="text-stone-500">{essay.link}</p>
+              </div>
+              <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
+            </a>
+          ))}
+        </TextBlock>
+        <Headline>Podcasts</Headline>
+        <TextBlock>
+          {podcasts.map((podcast, i) => (
+            <a
+              key={i}
+              href={podcast.link}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all"
+            >
+              <div>
+                <p className="font-medium">{podcast.title}</p>
+                <p className="text-stone-500">{podcast.description}</p>
               </div>
               <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
             </a>
@@ -192,7 +166,7 @@ const contact = [
   },
   {
     name: "Email",
-    link: "mailto:erich@meetanyway.com",
+    link: "mailto:erichjohannlehmann@gmail.com",
   },
 ];
 
@@ -276,59 +250,24 @@ const essays = [
   },
 ];
 
-const projects = [
+const podcasts = [
   {
-    title: "A quick demo of all the projects.",
-    description: "Click here for a fast walkthrough 🙂",
-    link: "https://www.loom.com/share/14a7db5c812b438284289c486391bb27",
+    title:
+      "Johannes Hartl: Sinn des Lebens, Freier Wille, Wer ist Gott? | Lehmann Podcast",
+    description: "129.480 Aufrufe · vor 1 Jahr",
+    link: "https://youtu.be/G-QTQxhCzHE?si=X0NpqACvn4w0_KcY",
   },
   {
-    title: "UX Swaps",
-    description: "Next.js, Tailwind, Firebase",
-    link: "https://www.uxswaps.com/",
+    title: "Hermann Simon: Deutschlands Zukunft und Hidden Champions | Lehmann Podcast",
+    description: "85.706 Aufrufe · vor 1 Jahr",
+    link: "https://youtu.be/qjp3yKTa-lc?si=ZLzBXy2Th3ORrzR_",
   },
   {
-    title: "Negotiation Simulator (GPT-4)",
-    description: "Next.js, Tailwind, Typescript, OpenAI GPT-4",
-    link: "https://next-chatbot-one.vercel.app/",
+    title:
+      "Pfarrer Rainer M. Schießler: Zölibat, Synodaler Weg, Was ist ein gutes Leben? | Lehmann Podcast",
+    description: "55.995 Aufrufe · vor 2 Jahren",
+    link: "https://youtu.be/RKajbUdXB_U?si=F-wdKLPRMsX5wkmI",
   },
-  {
-    title: "Talk to Books (GPT-3.5)",
-    description:
-      "Next.js, Tailwind, Typescript, Supabase, OpenAI Embeddings, OpenAI GPT-3.5",
-    link: "https://library-gpt.vercel.app/",
-  },
-  {
-    title: "YC Investments Simulator",
-    description: "Vue.js, Bootstrap",
-    link: "https://investment-sim.netlify.app/",
-  },
-];
-
-const skills = [
-  // Soft Skills
-  "Product Management",
-  "Product Design",
-  "UX/UI",
-  "Enterprise Sales",
-  "Copywriting",
-  "Usability Testing",
-  "Full Stack Development",
-  // Hard Skills
-  "Javascript",
-  "Typescript",
-  "React",
-  "Next.js",
-  "Tailwind",
-  "Firebase",
-  "Supabase",
-  "OpenAI GPT Models",
-  "Open AI Embeddings",
-  "Python",
-  // Tools
-  "Figma",
-  "Adobe XD",
-  "Airtable",
 ];
 
 const showLinks = false;
