@@ -20,9 +20,12 @@ function Home() {
         <Headline>Experience</Headline>
         <TextBlock>
           {experience.map((exp, i) => (
-            <div key={i} className="border rounded p-4 text-sm flex gap-4">
+            <div
+              key={i}
+              className="border rounded p-4 text-sm flex flex-col sm:flex-row gap-4"
+            >
               {exp.img && (
-                <div className="w-full max-w-[40px]">
+                <div className="w-full sm:w-auto max-w-[40px]">
                   <Image
                     src={exp.img}
                     width={40}
@@ -52,9 +55,12 @@ function Home() {
         <Headline>Education</Headline>
         <TextBlock>
           {education.map((edu, i) => (
-            <div key={i} className="border rounded p-4 text-sm flex gap-4">
+            <div
+              key={i}
+              className="border rounded p-4 text-sm flex flex-col sm:flex-row gap-4"
+            >
               {edu.img && (
-                <div className="w-full max-w-[40px]">
+                <div className="w-full sm:w-auto max-w-[40px]">
                   <Image
                     width={40}
                     height={40}
@@ -88,27 +94,30 @@ function Home() {
               href={essay.link}
               target="_blank"
               rel="noreferrer"
-              className="text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all"
+              className="text-sm -m-2 p-2 rounded flex items-center justify-between"
             >
               <div>
                 <p className="font-medium">{essay.title}</p>
-                <p className="text-stone-500">{essay.link}</p>
+                <p className="text-stone-500 break-all sm:break-normal">{essay.link}</p>
               </div>
-              <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
+              <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 m-1 text-stone-500 flex-shrink-0" />
             </a>
           ))}
         </TextBlock>
         <Headline>Podcasts</Headline>
         <TextBlock>
           {podcasts.map((podcast, i) => (
-            <div key={i} className="border rounded p-4 text-sm flex gap-4">
+            <div
+              key={i}
+              className="border rounded p-4 text-sm flex flex-col sm:flex-row gap-4"
+            >
               {podcast.thumbnail && (
-                <div className="w-full max-w-[120px] flex-shrink-0">
+                <div className="w-full sm:w-auto max-w-[200px] sm:max-w-[120px] flex-shrink-0">
                   <Image
                     src={podcast.thumbnail}
-                    width={120}
-                    height={67.5}
-                    className="rounded"
+                    width={200}
+                    height={112.5}
+                    className="rounded w-full h-auto sm:w-[120px] sm:h-[67.5px]"
                     alt={podcast.title}
                   />
                 </div>
@@ -129,7 +138,7 @@ function Home() {
         </TextBlock>
         <Headline>Contact</Headline>
         <TextBlock>
-          <div className="text-sm flex gap-4">
+          <div className="text-sm flex flex-wrap gap-2 sm:gap-4">
             {contact.map((c, i) => (
               <a
                 key={i}
@@ -195,13 +204,23 @@ const getTimeFromJan2018 = () => {
 
 const experience = [
   {
+    company: "DieForschungszulage",
+    title: "Founder",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    date: "Present", // Placeholder date
+    time: "", // Placeholder time
+    link: "https://www.dieforschungszulage.de/",
+    img: "/diefz.png",
+  },
+  {
     company: "MeetAnyway",
     title: "Co-Founder",
     description:
       "MeetAnyway helps researchers to organize online conferences. Some of the most renowned reasearch institutes in the world are our customers. I co-founded it with 2 friends in 2018. We have over 30,000 users. I am Co-CEO, which means I am responsible for product and sales. I learned how to ship products fast with a  very small team. I learned to sell to large organizations. I also discovered the value of regular usability testing, which is a fundamental thing to do when you try to build something your users love.",
     date: "Jan 2018 - Present",
     time: getTimeFromJan2018(),
-    link: "https://meetanyway.com/welcome",
+    link: "https://www.ycombinator.com/companies/meetanyway",
     img: "/MA.jpg",
   },
   {
@@ -220,7 +239,7 @@ const experience = [
       "Deloitte Digital helps German DAX companies build new businesses. I was employee #3 - by the time I left it was a team of 40. I learned from so many wonderful people here. I discovered that I want to start my own thing and took the plunge to become a founder.",
     date: "2014 - 2016",
     time: "2 yrs",
-    link: "https://www.deloittedigital.de/en.html",
+    link: "https://www.deloittedigital.com/",
     img: "/DD.jpg",
   },
 ];
@@ -265,20 +284,20 @@ const podcasts = [
   {
     title:
       "Johannes Hartl: Sinn des Lebens, Freier Wille, Wer ist Gott? | Lehmann Podcast",
-    description: "129.480 Aufrufe · vor 1 Jahr",
+    description: "129,480 Views · 1 year ago",
     link: "https://youtu.be/G-QTQxhCzHE?si=X0NpqACvn4w0_KcY",
     thumbnail: "https://img.youtube.com/vi/G-QTQxhCzHE/mqdefault.jpg",
   },
   {
     title: "Hermann Simon: Deutschlands Zukunft und Hidden Champions | Lehmann Podcast",
-    description: "85.706 Aufrufe · vor 1 Jahr",
+    description: "85,706 Views · 1 year ago",
     link: "https://youtu.be/qjp3yKTa-lc?si=ZLzBXy2Th3ORrzR_",
     thumbnail: "https://img.youtube.com/vi/qjp3yKTa-lc/mqdefault.jpg",
   },
   {
     title:
       "Pfarrer Rainer M. Schießler: Zölibat, Synodaler Weg, Was ist ein gutes Leben? | Lehmann Podcast",
-    description: "55.995 Aufrufe · vor 2 Jahren",
+    description: "55,995 Views · 2 years ago",
     link: "https://youtu.be/RKajbUdXB_U?si=F-wdKLPRMsX5wkmI",
     thumbnail: "https://img.youtube.com/vi/RKajbUdXB_U/mqdefault.jpg",
   },
