@@ -101,19 +101,30 @@ function Home() {
         <Headline>Podcasts</Headline>
         <TextBlock>
           {podcasts.map((podcast, i) => (
-            <a
-              key={i}
-              href={podcast.link}
-              target="_blank"
-              rel="noreferrer"
-              className="text-sm -m-2 p-2 rounded flex items-center justify-between group hover:bg-stone-50 hover:px-4 transition-all"
-            >
-              <div>
-                <p className="font-medium">{podcast.title}</p>
+            <div key={i} className="border rounded p-4 text-sm flex gap-4">
+              {podcast.thumbnail && (
+                <div className="w-full max-w-[120px] flex-shrink-0">
+                  <Image
+                    src={podcast.thumbnail}
+                    width={120}
+                    height={67.5}
+                    className="rounded"
+                    alt={podcast.title}
+                  />
+                </div>
+              )}
+              <div className="w-full">
+                <p className="font-medium">
+                  {podcast.title}
+                  {podcast.link && (
+                    <a href={podcast.link} target="_blank" rel="noreferrer">
+                      <ArrowUpRightIcon className="h-4 w-4 inline pb-1 m-1 text-stone-500" />
+                    </a>
+                  )}
+                </p>
                 <p className="text-stone-500">{podcast.description}</p>
               </div>
-              <ArrowUpRightIcon className="h-4 w-4 group-hover:h-5 group-hover:w-5 inline pb-1 text-neutral-400 group-hover:text-neutral-800 transition" />
-            </a>
+            </div>
           ))}
         </TextBlock>
         <Headline>Contact</Headline>
@@ -256,17 +267,20 @@ const podcasts = [
       "Johannes Hartl: Sinn des Lebens, Freier Wille, Wer ist Gott? | Lehmann Podcast",
     description: "129.480 Aufrufe · vor 1 Jahr",
     link: "https://youtu.be/G-QTQxhCzHE?si=X0NpqACvn4w0_KcY",
+    thumbnail: "https://img.youtube.com/vi/G-QTQxhCzHE/mqdefault.jpg",
   },
   {
     title: "Hermann Simon: Deutschlands Zukunft und Hidden Champions | Lehmann Podcast",
     description: "85.706 Aufrufe · vor 1 Jahr",
     link: "https://youtu.be/qjp3yKTa-lc?si=ZLzBXy2Th3ORrzR_",
+    thumbnail: "https://img.youtube.com/vi/qjp3yKTa-lc/mqdefault.jpg",
   },
   {
     title:
       "Pfarrer Rainer M. Schießler: Zölibat, Synodaler Weg, Was ist ein gutes Leben? | Lehmann Podcast",
     description: "55.995 Aufrufe · vor 2 Jahren",
     link: "https://youtu.be/RKajbUdXB_U?si=F-wdKLPRMsX5wkmI",
+    thumbnail: "https://img.youtube.com/vi/RKajbUdXB_U/mqdefault.jpg",
   },
 ];
 
