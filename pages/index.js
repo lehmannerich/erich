@@ -7,14 +7,18 @@ function Home() {
   return (
     <>
       <Main>
-        <Headline>Erich Lehmann</Headline>
+        <Headline>I'm Erich,</Headline>
         <TextBlock>
           <p>Here, in short, is who I am.</p>
           <p>
-            I think a lot about what it means to live a good life. I enjoy building things
-            that people love. I built two companies from the ground up - one of them
-            became really successful. I can code, I can write and I have never stopped
-            learning.
+            I think deeply about what it means to live a good life. I enjoy building
+            things that people love. I built two succesful companies from the ground up. I
+            can code, I can sell and I have never stopped learning.
+          </p>
+          <p>
+            Currently, I'm applying to OpenAI. So, if you're from OpenAI... hello! You are
+            on my personal site. Get to know me. If you feel particularly adventurous
+            checkout the reel on all the reasons you should hire me that I vibe coded.
           </p>
         </TextBlock>
         <Headline>Experience</Headline>

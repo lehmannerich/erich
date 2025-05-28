@@ -13,7 +13,7 @@ function TextBlock({ children }) {
 function Main({ children }) {
   return (
     <>
-      <main className="mx-auto max-w-2xl p-4 pt-0 md:pt-10 print:pt-0 print:px-8 print:max-w-none">
+      <main className="mx-auto max-w-2xl p-4 pt-0 md:pt-10 print:pt-0 print:px-16 print:max-w-none">
         {children}
       </main>
       <div className="h-32 print:hidden"></div>
