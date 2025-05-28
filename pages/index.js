@@ -1,4 +1,4 @@
-import { ArrowTopRightOnSquareIcon, ArrowUpRightIcon } from "@heroicons/react/24/solid";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Script from "next/script";
 import { Headline, Main, TextBlock } from "../components/Structure";
@@ -12,13 +12,22 @@ function Home() {
           <p>Here, in short, is who I am.</p>
           <p>
             I think deeply about what it means to live a good life. I enjoy building
-            things that people love. I built two succesful companies from the ground up. I
-            can code, I can sell and I have never stopped learning.
+            things that people love. As a founder I built two successful companies from
+            the ground up. I can code, I can sell and I have never stopped learning.
           </p>
           <p>
             Currently, I'm applying to OpenAI. So, if you're from OpenAI... hello! You are
-            on my personal site. Get to know me. If you feel particularly adventurous
-            checkout the reel on all the reasons you should hire me that I vibe coded.
+            on my personal website. You can get to know me here or check out a{" "}
+            <a
+              href="https://reel-rose.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline"
+            >
+              reel
+              <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 ml-1" />
+            </a>{" "}
+            on all the reasons you should hire me that I vibe coded.
           </p>
         </TextBlock>
         <Headline>Experience</Headline>
@@ -90,57 +99,55 @@ function Home() {
             </div>
           ))}
         </TextBlock>
-        <Headline>Essays</Headline>
+        <Headline>Publications</Headline>
         <TextBlock>
-          {essays.map((essay, i) => (
-            <a
-              key={i}
-              href={essay.link}
-              target="_blank"
-              rel="noreferrer"
-              className="text-sm -m-2 p-2 rounded flex items-center justify-between print:break-inside-avoid"
-            >
-              <div>
-                <p className="font-medium">{essay.title}</p>
-                <p className="text-stone-500 break-all sm:break-normal print:text-xs print:break-normal">
-                  {essay.link}
-                </p>
-              </div>
-              <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 m-1 text-stone-500 flex-shrink-0 print:hidden" />
-            </a>
-          ))}
-        </TextBlock>
-        <Headline>Podcasts</Headline>
-        <TextBlock>
-          {podcasts.map((podcast, i) => (
-            <div
-              key={i}
-              className="border rounded p-4 text-sm flex flex-col sm:flex-row gap-4 print:border-gray-300 print:break-inside-avoid print:flex-row"
-            >
-              {podcast.thumbnail && (
-                <div className="w-full sm:w-auto max-w-[200px] sm:max-w-[120px] flex-shrink-0 print:max-w-[80px]">
-                  <Image
-                    src={podcast.thumbnail}
-                    width={200}
-                    height={112.5}
-                    className="rounded w-full h-auto sm:w-[120px] sm:h-[67.5px] print:w-[80px] print:h-[45px]"
-                    alt={podcast.title}
-                  />
-                </div>
-              )}
-              <div className="w-full">
-                <p className="font-medium">
-                  {podcast.title}
-                  {podcast.link && (
-                    <a href={podcast.link} target="_blank" rel="noreferrer">
-                      <ArrowUpRightIcon className="h-4 w-4 inline pb-1 m-1 text-stone-500 print:hidden" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {essays.map((essay, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-2 text-sm print:break-inside-avoid"
+              >
+                <Image
+                  src="/logos/substack.png"
+                  width={20}
+                  height={20}
+                  className="h-5 w-5 mt-0.5 flex-shrink-0 print:hidden"
+                  alt="Substack"
+                />
+                <div className="min-w-0">
+                  <p className="font-medium truncate">
+                    {essay.title}
+                    <a href={essay.link} target="_blank" rel="noreferrer">
+                      <ArrowTopRightOnSquareIcon className="h-3 w-3 inline pb-0.5 ml-1 text-stone-500 hover:text-stone-800" />
                     </a>
-                  )}
-                </p>
-                <p className="text-stone-500 print:text-xs">{podcast.description}</p>
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+            {podcasts.map((podcast, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-2 text-sm print:break-inside-avoid"
+              >
+                <Image
+                  src="/logos/youtube.png"
+                  width={20}
+                  height={20}
+                  className="h-5 w-5 mt-0.5 flex-shrink-0 print:hidden"
+                  alt="YouTube"
+                />
+                <div className="min-w-0">
+                  <p className="font-medium truncate">
+                    {podcast.title}
+                    <a href={podcast.link} target="_blank" rel="noreferrer">
+                      <ArrowTopRightOnSquareIcon className="h-3 w-3 inline pb-0.5 ml-1 text-stone-500 hover:text-stone-800" />
+                    </a>
+                  </p>
+                  <p className="text-stone-500 text-xs">{podcast.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </TextBlock>
         <Headline>Contact</Headline>
         <TextBlock>
@@ -273,6 +280,10 @@ const essays = [
     link: "https://buildingher.substack.com/p/the-thousand-brains-theory",
   },
   {
+    title: "Bookshelf 2022",
+    link: "https://erich.substack.com/p/bookshelf-2022",
+  },
+  {
     title: "The basics of predictive processing",
     link: "https://buildingher.substack.com/p/predictive-processing",
   },
@@ -280,32 +291,24 @@ const essays = [
     title: "The right kind of optimism",
     link: "https://erich.substack.com/p/the-right-kind-of-optimism",
   },
-  {
-    title: "Bookshelf 2022",
-    link: "https://erich.substack.com/p/bookshelf-2022",
-  },
 ];
 
 const podcasts = [
   {
-    title:
-      "Johannes Hartl: Sinn des Lebens, Freier Wille, Wer ist Gott? | Lehmann Podcast",
-    description: "129,480 Views · 1 year ago",
+    title: "Johannes Hartl: Sinn des Lebens, Freier Wille, Wer ist Gott?",
+    description: "129,480 Views",
     link: "https://youtu.be/G-QTQxhCzHE?si=X0NpqACvn4w0_KcY",
-    thumbnail: "https://img.youtube.com/vi/G-QTQxhCzHE/mqdefault.jpg",
   },
   {
-    title: "Hermann Simon: Deutschlands Zukunft und Hidden Champions | Lehmann Podcast",
-    description: "85,706 Views · 1 year ago",
+    title: "Hermann Simon: Deutschlands Zukunft und Hidden Champions",
+    description: "85,706 Views",
     link: "https://youtu.be/qjp3yKTa-lc?si=ZLzBXy2Th3ORrzR_",
-    thumbnail: "https://img.youtube.com/vi/qjp3yKTa-lc/mqdefault.jpg",
   },
   {
     title:
-      "Pfarrer Rainer M. Schießler: Zölibat, Synodaler Weg, Was ist ein gutes Leben? | Lehmann Podcast",
-    description: "55,995 Views · 2 years ago",
+      "Pfarrer Rainer M. Schießler: Zölibat, Synodaler Weg, Was ist ein gutes Leben?",
+    description: "55,995 Views",
     link: "https://youtu.be/RKajbUdXB_U?si=F-wdKLPRMsX5wkmI",
-    thumbnail: "https://img.youtube.com/vi/RKajbUdXB_U/mqdefault.jpg",
   },
 ];
 
