@@ -22,10 +22,10 @@ function Home() {
           {experience.map((exp, i) => (
             <div
               key={i}
-              className="border rounded p-4 text-sm flex flex-col sm:flex-row gap-4"
+              className="border rounded p-4 text-sm flex flex-col sm:flex-row gap-4 print:border-gray-300 print:break-inside-avoid"
             >
               {exp.img && (
-                <div className="w-full sm:w-auto max-w-[40px]">
+                <div className="w-full sm:w-auto max-w-[40px] print:hidden">
                   <Image
                     src={exp.img}
                     width={40}
@@ -57,10 +57,10 @@ function Home() {
           {education.map((edu, i) => (
             <div
               key={i}
-              className="border rounded p-4 text-sm flex flex-col sm:flex-row gap-4"
+              className="border rounded p-4 text-sm flex flex-col sm:flex-row gap-4 print:border-gray-300 print:break-inside-avoid"
             >
               {edu.img && (
-                <div className="w-full sm:w-auto max-w-[40px]">
+                <div className="w-full sm:w-auto max-w-[40px] print:hidden">
                   <Image
                     width={40}
                     height={40}
@@ -94,13 +94,15 @@ function Home() {
               href={essay.link}
               target="_blank"
               rel="noreferrer"
-              className="text-sm -m-2 p-2 rounded flex items-center justify-between"
+              className="text-sm -m-2 p-2 rounded flex items-center justify-between print:break-inside-avoid"
             >
               <div>
                 <p className="font-medium">{essay.title}</p>
-                <p className="text-stone-500 break-all sm:break-normal">{essay.link}</p>
+                <p className="text-stone-500 break-all sm:break-normal print:text-xs print:break-normal">
+                  {essay.link}
+                </p>
               </div>
-              <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 m-1 text-stone-500 flex-shrink-0" />
+              <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 m-1 text-stone-500 flex-shrink-0 print:hidden" />
             </a>
           ))}
         </TextBlock>
@@ -109,15 +111,15 @@ function Home() {
           {podcasts.map((podcast, i) => (
             <div
               key={i}
-              className="border rounded p-4 text-sm flex flex-col sm:flex-row gap-4"
+              className="border rounded p-4 text-sm flex flex-col sm:flex-row gap-4 print:border-gray-300 print:break-inside-avoid print:flex-row"
             >
               {podcast.thumbnail && (
-                <div className="w-full sm:w-auto max-w-[200px] sm:max-w-[120px] flex-shrink-0">
+                <div className="w-full sm:w-auto max-w-[200px] sm:max-w-[120px] flex-shrink-0 print:max-w-[80px]">
                   <Image
                     src={podcast.thumbnail}
                     width={200}
                     height={112.5}
-                    className="rounded w-full h-auto sm:w-[120px] sm:h-[67.5px]"
+                    className="rounded w-full h-auto sm:w-[120px] sm:h-[67.5px] print:w-[80px] print:h-[45px]"
                     alt={podcast.title}
                   />
                 </div>
@@ -127,28 +129,28 @@ function Home() {
                   {podcast.title}
                   {podcast.link && (
                     <a href={podcast.link} target="_blank" rel="noreferrer">
-                      <ArrowUpRightIcon className="h-4 w-4 inline pb-1 m-1 text-stone-500" />
+                      <ArrowUpRightIcon className="h-4 w-4 inline pb-1 m-1 text-stone-500 print:hidden" />
                     </a>
                   )}
                 </p>
-                <p className="text-stone-500">{podcast.description}</p>
+                <p className="text-stone-500 print:text-xs">{podcast.description}</p>
               </div>
             </div>
           ))}
         </TextBlock>
         <Headline>Contact</Headline>
         <TextBlock>
-          <div className="text-sm flex flex-wrap gap-2 sm:gap-4">
+          <div className="text-sm flex flex-wrap gap-2 sm:gap-4 print:gap-4">
             {contact.map((c, i) => (
               <a
                 key={i}
                 href={c.link}
                 target="_blank"
                 rel="noreferrer"
-                className="text-neutral-500 hover:text-black transition"
+                className="text-neutral-500 hover:text-black transition print:text-black"
               >
                 {c.name}
-                <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1" />
+                <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 print:hidden" />
               </a>
             ))}
           </div>
