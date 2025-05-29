@@ -97,31 +97,28 @@ function Home() {
         </TextBlock>
         <Headline>Publications</Headline>
         <TextBlock>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2">
             {allPublications.map((item, i) => (
               <div
                 key={item.link || i}
-                className="border rounded p-3 text-sm flex items-start gap-3 print:border-gray-300 print:break-inside-avoid"
+                className="text-sm flex items-start gap-2 print:break-inside-avoid"
               >
                 <Image
                   src={item.logo}
-                  width={20}
-                  height={20}
-                  className="h-5 w-5 mt-0.5 flex-shrink-0 print:hidden"
+                  width={16}
+                  height={16}
+                  className="h-4 w-4 mt-0.5 flex-shrink-0 print:hidden"
                   alt={item.type === "essay" ? "Substack logo" : "YouTube logo"}
                 />
                 <div className="min-w-0 flex-grow">
-                  <p className="font-medium">
-                    <Link href={item.link} size="small">
-                      {item.title}
-                    </Link>
-                  </p>
-                  <p className="text-stone-500 text-xs mt-0.5">
-                    {item.type === "podcast" && item.description
-                      ? `${item.description} · `
-                      : ""}
-                    {formatDistanceToNow(new Date(item.date), { addSuffix: true })}
-                  </p>
+                  <Link href={item.link} size="small">
+                    {item.title}
+                  </Link>
+                  <span className="text-stone-500 text-xs ml-2">
+                    {item.description
+                      ? item.description
+                      : formatDistanceToNow(new Date(item.date), { addSuffix: true })}
+                  </span>
                 </div>
               </div>
             ))}
@@ -248,8 +245,18 @@ const education = [
 const essaysData = [
   {
     title: "The Thousand Brains Theory",
+    description: "185 views",
     link: "https://buildingher.substack.com/p/the-thousand-brains-theory",
     date: "2022-12-07",
+    type: "essay",
+    logo: "/logos/substack.png",
+    visible: true,
+  },
+  {
+    title: "A roadmap to the mind",
+    link: "https://buildingher.substack.com/p/a-roadmap-to-the-mind",
+    date: "2022-09-08",
+    description: "742 Views",
     type: "essay",
     logo: "/logos/substack.png",
     visible: true,
@@ -264,6 +271,7 @@ const essaysData = [
   },
   {
     title: "The basics of predictive processing",
+    description: "136 views",
     link: "https://buildingher.substack.com/p/predictive-processing",
     date: "2022-08-27",
     type: "essay",
@@ -282,7 +290,7 @@ const essaysData = [
 
 const podcastsData = [
   {
-    title: "Johannes Hartl: Sinn des Lebens, Freier Wille, Wer ist Gott?",
+    title: "Johannes Hartl: Sinn des Lebens, Freier Wille...",
     description: "129,480 Views",
     link: "https://youtu.be/G-QTQxhCzHE?si=X0NpqACvn4w0_KcY",
     date: "2023-10-07",
@@ -291,7 +299,7 @@ const podcastsData = [
     visible: true,
   },
   {
-    title: "Hermann Simon: Deutschlands Zukunft und Hidden Champions",
+    title: "Hermann Simon: Hidden Champions...",
     description: "85,706 Views",
     link: "https://youtu.be/qjp3yKTa-lc?si=ZLzBXy2Th3ORrzR_",
     date: "2023-12-26",
