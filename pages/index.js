@@ -17,18 +17,17 @@ function Home() {
             I can code, I can sell and I have never stopped learning.
           </p>
           <p>
-            Currently, I'm applying to OpenAI. So, if you're from OpenAI... hello! You are
-            on my personal website. You can get to know me here or check out a{" "}
+            Currently, I'm applying to OpenAI. So, if you're from OpenAI... hello! 👋 You
+            can check out my CV on this very site and you can view{" "}
             <a
               href="https://reel-rose.vercel.app/"
               target="_blank"
               rel="noreferrer"
-              className="text-blue-600 hover:text-blue-800 underline"
+              className="font-bold text-black hover:text-gray-800"
             >
-              reel
+              18 reasons you should hire me
               <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 ml-1" />
-            </a>{" "}
-            on all the reasons you should hire me that I vibe coded.
+            </a>
           </p>
         </TextBlock>
         <Headline>Experience</Headline>
