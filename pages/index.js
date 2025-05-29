@@ -1,8 +1,7 @@
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
 import { formatDistanceToNow } from "date-fns";
 import Image from "next/image";
 import Script from "next/script";
-import { Headline, Main, TextBlock } from "../components/Structure";
+import { Headline, Link, Main, TextBlock } from "../components/Structure";
 
 function Home() {
   return (
@@ -19,15 +18,9 @@ function Home() {
           <p>
             Currently, I'm applying to OpenAI. So, if you're from OpenAI... hello! 👋 You
             can check out my CV on this very site and you can view{" "}
-            <a
-              href="https://reel-rose.vercel.app/"
-              target="_blank"
-              rel="noreferrer"
-              className="font-bold text-black hover:text-gray-800"
-            >
+            <Link href="https://reel-rose.vercel.app/">
               18 reasons you should hire me
-              <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 ml-1" />
-            </a>
+            </Link>
           </p>
         </TextBlock>
         <Headline>Experience</Headline>
@@ -50,11 +43,13 @@ function Home() {
               )}
               <div className="w-full">
                 <p className="font-medium">
-                  {exp.title} @ {exp.company}
-                  {exp.link && (
-                    <a href={exp.link} target="_blank" rel="noreferrer">
-                      <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 m-1 text-stone-500 hover:text-stone-800" />
-                    </a>
+                  {exp.title} @{" "}
+                  {exp.link ? (
+                    <Link href={exp.link} size="small">
+                      {exp.company}
+                    </Link>
+                  ) : (
+                    exp.company
                   )}
                 </p>
                 <p className="text-stone-500">
@@ -84,16 +79,16 @@ function Home() {
                 </div>
               )}
               <div className="w-full">
-                <p className="font-medium">
-                  {edu.degree}{" "}
-                  {edu.link && (
-                    <a href={edu.link} target="_blank" rel="noreferrer">
-                      <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 m-1 text-stone-500 hover:text-stone-800" />
-                    </a>
-                  )}
-                </p>
+                <p className="font-medium">{edu.degree}</p>
                 <p className="text-stone-500">
-                  {edu.school} {edu.date}
+                  {edu.link ? (
+                    <Link href={edu.link} size="small">
+                      {edu.school}
+                    </Link>
+                  ) : (
+                    edu.school
+                  )}{" "}
+                  {edu.date}
                 </p>
               </div>
             </div>
@@ -116,10 +111,9 @@ function Home() {
                 />
                 <div className="min-w-0 flex-grow">
                   <p className="font-medium">
-                    {item.title}
-                    <a href={item.link} target="_blank" rel="noreferrer">
-                      <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 ml-1 text-stone-500 hover:text-stone-800" />
-                    </a>
+                    <Link href={item.link} size="small">
+                      {item.title}
+                    </Link>
                   </p>
                   <p className="text-stone-500 text-xs mt-0.5">
                     {item.type === "podcast" && item.description
@@ -136,16 +130,9 @@ function Home() {
         <TextBlock>
           <div className="text-sm flex flex-wrap gap-2 sm:gap-4 print:gap-4">
             {contact.map((c, i) => (
-              <a
-                key={i}
-                href={c.link}
-                target="_blank"
-                rel="noreferrer"
-                className="text-neutral-500 hover:text-black transition print:text-black"
-              >
+              <Link key={i} href={c.link} size="small">
                 {c.name}
-                <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 print:hidden" />
-              </a>
+              </Link>
             ))}
           </div>
         </TextBlock>
