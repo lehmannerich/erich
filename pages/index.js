@@ -6,6 +6,11 @@ import Image from "next/image";
 import Script from "next/script";
 import { Headline, Link, Main, TextBlock } from "../components/Structure";
 
+// Print layout spacing variables
+const PRINT_EXP_EDU_ITEM_SPACING = "mb-6"; // Tailwind class for bottom margin of individual items in Experience and Education
+const PRINT_PUBLICATION_ITEM_SPACING = "mb-3"; // Tailwind class for bottom margin of individual items in Publications
+const PRINT_SECTION_TITLE_MARGIN_TOP = "mt-4"; // Tailwind class for top margin for section titles (Education, Publications)
+
 function Home() {
   return (
     <>
@@ -168,6 +173,9 @@ function Home() {
               <Link href="https://reel-rose.vercel.app/" printBlue={true} size="small">
                 18 reasons you should hire me
               </Link>
+              <p className="text-xs text-stone-500 mt-0.5">
+                https://reel-rose.vercel.app/
+              </p>
             </div>
             <h2 className="font-bold text-lg mb-2">Contact</h2>
             <div className="bg-gray-50 p-3 rounded">
@@ -198,8 +206,11 @@ function Home() {
             <h2 className="font-bold text-lg mt-0 mb-3">Experience</h2>
             <div className="mb-4">
               {experience.map((exp, i) => (
-                <div key={i} className="mb-3 text-sm print:break-inside-avoid">
-                  <p className="font-medium">
+                <div
+                  key={i}
+                  className={`text-sm print:break-inside-avoid ${PRINT_EXP_EDU_ITEM_SPACING}`}
+                >
+                  <p className="text-xs font-medium">
                     {exp.title} @ {exp.company}
                   </p>
                   <p className="text-stone-500 text-xs">
@@ -210,12 +221,14 @@ function Home() {
               ))}
             </div>
 
-            <h2 className="font-bold text-lg mt-4 mb-3">Education</h2>
+            <h2 className={`font-bold text-lg mb-3 ${PRINT_SECTION_TITLE_MARGIN_TOP}`}>
+              Education
+            </h2>
             <div className="mb-4">
               {education.map((edu, i) => (
                 <div
                   key={i}
-                  className="mb-3 text-sm print:break-inside-avoid flex gap-2 items-center"
+                  className={`text-sm print:break-inside-avoid flex gap-2 items-center ${PRINT_EXP_EDU_ITEM_SPACING}`}
                 >
                   {edu.img && (
                     <div className="flex-shrink-0">
@@ -229,7 +242,7 @@ function Home() {
                     </div>
                   )}
                   <div className="flex-grow">
-                    <p className="font-medium">{edu.school}</p>
+                    <p className="text-xs font-medium">{edu.school}</p>
                     <p className="text-stone-500 text-xs">
                       {edu.degree} {edu.date && `· ${edu.date}`}
                     </p>
@@ -238,23 +251,28 @@ function Home() {
               ))}
             </div>
 
-            <h2 className="font-bold text-lg mt-4 mb-3">Publications</h2>
+            <h2 className={`font-bold text-lg mb-3 ${PRINT_SECTION_TITLE_MARGIN_TOP}`}>
+              Publications
+            </h2>
             <div className="text-xs">
               {allPublications.map((item, i) => (
-                <div key={item.link || i} className="mb-1 flex items-start gap-1">
-                  <Image
-                    src={item.logo}
-                    width={12}
-                    height={12}
-                    className="h-3 w-3 mt-0.5 flex-shrink-0"
-                    alt={item.type === "essay" ? "Substack" : "YouTube"}
-                  />
-                  <div className="flex-grow">
-                    <span>{item.title}</span>
-                    {item.description && (
-                      <span className="text-stone-500 ml-1">· {item.description}</span>
-                    )}
+                <div
+                  key={item.link || i}
+                  className={`flex flex-col gap-0 ${PRINT_PUBLICATION_ITEM_SPACING}`}
+                >
+                  <div className="flex items-start gap-1">
+                    <Image
+                      src={item.logo}
+                      width={12}
+                      height={12}
+                      className="h-3 w-3 mt-0.5 flex-shrink-0"
+                      alt={item.type === "essay" ? "Substack" : "YouTube"}
+                    />
+                    <div className="flex-grow">
+                      <span className="font-medium">{item.title}</span>
+                    </div>
                   </div>
+                  <p className="text-xs text-stone-500 mt-0 pl-[16px]">{item.link}</p>
                 </div>
               ))}
             </div>
