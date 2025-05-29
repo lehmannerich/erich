@@ -1,4 +1,5 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
+import { formatDistanceToNow } from "date-fns";
 import Image from "next/image";
 import Script from "next/script";
 import { Headline, Main, TextBlock } from "../components/Structure";
@@ -12,8 +13,8 @@ function Home() {
           <p>Here, in short, is who I am.</p>
           <p>
             I think deeply about what it means to live a good life. I enjoy building
-            things that people love. As a founder I built two successful companies from
-            the ground up. I can code, I can sell and I have never stopped learning.
+            things that people love. I built two successful companies from the ground up.
+            I can code, I can sell and I have never stopped learning.
           </p>
           <p>
             Currently, I'm applying to OpenAI. So, if you're from OpenAI... hello! You are
@@ -101,49 +102,32 @@ function Home() {
         </TextBlock>
         <Headline>Publications</Headline>
         <TextBlock>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {essays.map((essay, i) => (
+          <div className="flex flex-col gap-3">
+            {allPublications.map((item, i) => (
               <div
-                key={i}
-                className="flex items-start gap-2 text-sm print:break-inside-avoid"
+                key={item.link || i}
+                className="border rounded p-3 text-sm flex items-start gap-3 print:border-gray-300 print:break-inside-avoid"
               >
                 <Image
-                  src="/logos/substack.png"
+                  src={item.logo}
                   width={20}
                   height={20}
                   className="h-5 w-5 mt-0.5 flex-shrink-0 print:hidden"
-                  alt="Substack"
+                  alt={item.type === "essay" ? "Substack logo" : "YouTube logo"}
                 />
-                <div className="min-w-0">
-                  <p className="font-medium truncate">
-                    {essay.title}
-                    <a href={essay.link} target="_blank" rel="noreferrer">
-                      <ArrowTopRightOnSquareIcon className="h-3 w-3 inline pb-0.5 ml-1 text-stone-500 hover:text-stone-800" />
+                <div className="min-w-0 flex-grow">
+                  <p className="font-medium">
+                    {item.title}
+                    <a href={item.link} target="_blank" rel="noreferrer">
+                      <ArrowTopRightOnSquareIcon className="h-4 w-4 inline pb-1 ml-1 text-stone-500 hover:text-stone-800" />
                     </a>
                   </p>
-                </div>
-              </div>
-            ))}
-            {podcasts.map((podcast, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-2 text-sm print:break-inside-avoid"
-              >
-                <Image
-                  src="/logos/youtube.png"
-                  width={20}
-                  height={20}
-                  className="h-5 w-5 mt-0.5 flex-shrink-0 print:hidden"
-                  alt="YouTube"
-                />
-                <div className="min-w-0">
-                  <p className="font-medium truncate">
-                    {podcast.title}
-                    <a href={podcast.link} target="_blank" rel="noreferrer">
-                      <ArrowTopRightOnSquareIcon className="h-3 w-3 inline pb-0.5 ml-1 text-stone-500 hover:text-stone-800" />
-                    </a>
+                  <p className="text-stone-500 text-xs mt-0.5">
+                    {item.type === "podcast" && item.description
+                      ? `${item.description} · `
+                      : ""}
+                    {formatDistanceToNow(new Date(item.date), { addSuffix: true })}
                   </p>
-                  <p className="text-stone-500 text-xs">{podcast.description}</p>
                 </div>
               </div>
             ))}
@@ -274,43 +258,70 @@ const education = [
   },
 ];
 
-const essays = [
+const essaysData = [
   {
     title: "The Thousand Brains Theory",
     link: "https://buildingher.substack.com/p/the-thousand-brains-theory",
+    date: "2022-12-07",
+    type: "essay",
+    logo: "/logos/substack.png",
   },
   {
     title: "Bookshelf 2022",
     link: "https://erich.substack.com/p/bookshelf-2022",
+    date: "2022-10-21",
+    type: "essay",
+    logo: "/logos/substack.png",
   },
   {
     title: "The basics of predictive processing",
     link: "https://buildingher.substack.com/p/predictive-processing",
+    date: "2022-08-27",
+    type: "essay",
+    logo: "/logos/substack.png",
   },
   {
     title: "The right kind of optimism",
     link: "https://erich.substack.com/p/the-right-kind-of-optimism",
+    date: "2023-04-11",
+    type: "essay",
+    logo: "/logos/substack.png",
   },
 ];
 
-const podcasts = [
+const podcastsData = [
   {
     title: "Johannes Hartl: Sinn des Lebens, Freier Wille, Wer ist Gott?",
     description: "129,480 Views",
     link: "https://youtu.be/G-QTQxhCzHE?si=X0NpqACvn4w0_KcY",
+    date: "2023-10-07",
+    type: "podcast",
+    logo: "/logos/youtube.png",
   },
   {
     title: "Hermann Simon: Deutschlands Zukunft und Hidden Champions",
     description: "85,706 Views",
     link: "https://youtu.be/qjp3yKTa-lc?si=ZLzBXy2Th3ORrzR_",
+    date: "2023-12-26",
+    type: "podcast",
+    logo: "/logos/youtube.png",
   },
   {
     title:
       "Pfarrer Rainer M. Schießler: Zölibat, Synodaler Weg, Was ist ein gutes Leben?",
     description: "55,995 Views",
     link: "https://youtu.be/RKajbUdXB_U?si=F-wdKLPRMsX5wkmI",
+    date: "2023-04-01",
+    type: "podcast",
+    logo: "/logos/youtube.png",
   },
 ];
+
+const allPublications = [...essaysData, ...podcastsData].sort((a, b) => {
+  const dateA = new Date(a.date);
+  const dateB = new Date(b.date);
+  return dateB - dateA;
+});
 
 const showLinks = false;
 
