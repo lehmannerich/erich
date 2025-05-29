@@ -2,13 +2,15 @@ import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
 
 function Headline({ children }) {
   return (
-    <h2 className="font-bold text-2xl mt-12 print:mt-6 print:text-lg">{children}</h2>
+    <h2 className="font-bold text-2xl mt-12 print:mt-4 print:text-lg print:mb-1">
+      {children}
+    </h2>
   );
 }
 
 function TextBlock({ children }) {
   return (
-    <div className="font-light flex flex-col gap-4 mt-4 print:gap-3 print:mt-3">
+    <div className="font-light flex flex-col gap-4 mt-4 print:gap-2 print:mt-2">
       {children}
     </div>
   );
@@ -17,10 +19,25 @@ function TextBlock({ children }) {
 function Main({ children }) {
   return (
     <>
-      <main className="mx-auto max-w-2xl p-4 pt-0 md:pt-10 print:pt-0 print:px-16 print:max-w-none">
+      <main className="mx-auto max-w-2xl p-4 pt-0 md:pt-10 print:pt-4 print:px-16 print:pb-4 print:max-w-none">
         {children}
       </main>
       <div className="h-32 print:hidden"></div>
+      <style jsx global>{`
+        @media print {
+          * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+          }
+          @page {
+            margin: 0.4in 0.5in;
+            size: letter;
+          }
+          body {
+            font-size: 11pt;
+          }
+        }
+      `}</style>
     </>
   );
 }

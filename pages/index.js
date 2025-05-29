@@ -1,4 +1,4 @@
-import { formatDistanceToNow } from "date-fns";
+import { formatDistanceToNow, intervalToDuration } from "date-fns";
 import Image from "next/image";
 import Script from "next/script";
 import { Headline, Link, Main, TextBlock } from "../components/Structure";
@@ -11,13 +11,13 @@ function Home() {
         <TextBlock>
           <p>Here, in short, is who I am.</p>
           <p>
-            I think deeply about what it means to live a good life. I enjoy building
-            things that people love. I built two successful companies from the ground up.
-            I can code, I can sell and I have never stopped learning.
+            I think deeply about what it means to live a good life. I enjoy making things
+            that people love. I have built two successful companies from the ground up. I
+            can code, I can sell and I have never stopped learning.
           </p>
           <p>
-            Currently, I'm applying to OpenAI. So, if you're from OpenAI... hello! 👋 You
-            can check out my CV on this very site and you can view{" "}
+            Currently, I'm applying to OpenAI. So, if you are from OpenAI... hello 👋 I'm
+            glad you made it here! This is my CV and these are{" "}
             <Link href="https://reel-rose.vercel.app/">
               18 reasons you should hire me
             </Link>
@@ -28,10 +28,10 @@ function Home() {
           {experience.map((exp, i) => (
             <div
               key={i}
-              className="border rounded p-4 text-sm flex flex-col sm:flex-row gap-4 print:border-gray-300 print:break-inside-avoid"
+              className="border rounded p-4 text-sm flex flex-col sm:flex-row gap-4 print:border-gray-400 print:p-3 print:break-inside-avoid"
             >
               {exp.img && (
-                <div className="w-full sm:w-auto max-w-[40px] print:hidden">
+                <div className="w-full sm:w-auto max-w-[40px]">
                   <Image
                     src={exp.img}
                     width={40}
@@ -65,10 +65,10 @@ function Home() {
           {education.map((edu, i) => (
             <div
               key={i}
-              className="border rounded p-4 text-sm flex flex-col sm:flex-row gap-4 print:border-gray-300 print:break-inside-avoid"
+              className="border rounded p-4 text-sm flex flex-col sm:flex-row gap-4 print:border-gray-400 print:p-3 print:break-inside-avoid"
             >
               {edu.img && (
-                <div className="w-full sm:w-auto max-w-[40px] print:hidden">
+                <div className="w-full sm:w-auto max-w-[40px]">
                   <Image
                     width={40}
                     height={40}
@@ -107,7 +107,7 @@ function Home() {
                   src={item.logo}
                   width={16}
                   height={16}
-                  className="h-4 w-4 mt-0.5 flex-shrink-0 print:hidden"
+                  className="h-4 w-4 mt-0.5 flex-shrink-0"
                   alt={item.type === "essay" ? "Substack logo" : "YouTube logo"}
                 />
                 <div className="min-w-0 flex-grow">
@@ -126,11 +126,19 @@ function Home() {
         </TextBlock>
         <Headline>Contact</Headline>
         <TextBlock>
-          <div className="text-sm flex flex-wrap gap-2 sm:gap-4 print:gap-4">
+          <div className="text-sm flex flex-wrap gap-2 sm:gap-4 print:gap-4 print:hidden">
             {contact.map((c, i) => (
               <Link key={i} href={c.link} size="small">
                 {c.name}
               </Link>
+            ))}
+          </div>
+          <div className="hidden print:block print:text-sm">
+            {contactPrint.map((c, i) => (
+              <div key={i} className="mb-1">
+                <span className="font-medium">{c.name}:</span>{" "}
+                <span className="text-stone-600">{c.display}</span>
+              </div>
             ))}
           </div>
         </TextBlock>
@@ -171,16 +179,62 @@ const contact = [
   },
 ];
 
-const getTimeFromJan2018 = () => {
-  const jan2018 = new Date(2018, 0, 1);
+const contactPrint = [
+  {
+    name: "Phone",
+    display: "+49 176 209 566 86",
+  },
+  {
+    name: "Email",
+    display: "erichjohannlehmann@gmail.com",
+  },
+  {
+    name: "LinkedIn",
+    display: "linkedin.com/in/erichlehmann",
+  },
+  {
+    name: "Twitter",
+    display: "twitter.com/lehmannerich",
+  },
+  {
+    name: "Substack",
+    display: "substack.com/profile/1536365-erich-lehmann",
+  },
+  {
+    name: "Github",
+    display: "github.com/lehmannerich",
+  },
+];
+
+const formatYearsMonths = (durationObject) => {
+  const years = durationObject.years || 0;
+  const months = durationObject.months || 0;
+
+  let result = "";
+  if (years > 0) {
+    result += `${years} yr${years > 1 ? "s" : ""}`;
+  }
+  if (months > 0) {
+    if (result.length > 0) result += " ";
+    result += `${months} mo${months > 1 ? "s" : ""}`;
+  }
+
+  if (result.length > 0) {
+    return result;
+  } else {
+    if (years === 0 && months === 0 && (durationObject.days || 0) >= 0) {
+      return "Less than a month";
+    }
+    return "";
+  }
+};
+
+const getDurationToPresent = (startYear, startMonthZeroIndexed) => {
+  const startDate = new Date(startYear, startMonthZeroIndexed, 1);
   const today = new Date();
-  const diff = today - jan2018;
-  const diffInDays = diff / (1000 * 60 * 60 * 24);
-  const diffInYears = diffInDays / 365;
-  const diffInMonths = diffInDays / 30;
-  const years = Math.floor(diffInYears);
-  const months = Math.floor(diffInMonths - years * 12);
-  return `${years} yrs ${months} mos`;
+  if (startDate > today) return "";
+  const duration = intervalToDuration({ start: startDate, end: today });
+  return formatYearsMonths(duration);
 };
 
 const experience = [
@@ -188,9 +242,9 @@ const experience = [
     company: "DieForschungszulage",
     title: "Founder",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    date: "Present", // Placeholder date
-    time: "", // Placeholder time
+      "DieForschungszulage is a Service that helps startups get government funding. I closed €400k of deal volume in the first year and built the entire customer base from scratch.",
+    date: "Jan 2023 - Present",
+    time: getDurationToPresent(2023, 0),
     link: "https://www.dieforschungszulage.de/",
     img: "/diefz.png",
   },
@@ -198,9 +252,9 @@ const experience = [
     company: "MeetAnyway",
     title: "Co-Founder",
     description:
-      "MeetAnyway helps researchers to organize online conferences. Some of the most renowned reasearch institutes in the world are our customers. I co-founded it with 2 friends in 2018. We have over 30,000 users. I am Co-CEO, which means I am responsible for product and sales. I learned how to ship products fast with a  very small team. I learned to sell to large organizations. I also discovered the value of regular usability testing, which is a fundamental thing to do when you try to build something your users love.",
-    date: "Jan 2018 - Present",
-    time: getTimeFromJan2018(),
+      "MeetAnyway helps researchers to organize online conferences. We made over €1M in revenue and had over 30k users in the first two years. I closed over 100 of some of the most renowned research institutes in the world.",
+    date: "Jan 2018 - Dec 2024",
+    time: "7 yrs",
     link: "https://www.ycombinator.com/companies/meetanyway",
     img: "/MA.jpg",
   },
@@ -209,7 +263,7 @@ const experience = [
     title: "Founder",
     date: "2016 - 2018",
     description:
-      "Studipost was a free messenger for teachers and parents. I founded this alone, raised some money and hired an agency to build it with me. I made many 'first-time-founder' mistakes and learned from them. The app never grew fast enough. Moreover, I couldn't figure out how to shorten the sales cycle when dealing with schools. Eventually, I had to close it down. Still, I'm proud of it - it provided value to over 4000 people.",
+      "Studipost was a free messenger for teachers and parents. We made it to 4k weekly active users. In the end I couldn't get the business model to work - the sales cycles were too long and not profitable enough.",
     time: "2 yrs",
     img: "/AV.jpg",
   },
@@ -217,7 +271,7 @@ const experience = [
     company: "Deloitte Digital",
     title: "Venture Architect",
     description:
-      "Deloitte Digital helps German DAX companies build new businesses. I was employee #3 - by the time I left it was a team of 40. I learned from so many wonderful people here. I discovered that I want to start my own thing and took the plunge to become a founder.",
+      "Deloitte Digital helps German DAX companies build new businesses. I was employee #3 and by the time I left we were a team of 40 and closed 5 really big deals. I was not the closer, but I got to watch from some skilled people do it.",
     date: "2014 - 2016",
     time: "2 yrs",
     link: "https://www.deloittedigital.com/",
