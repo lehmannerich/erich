@@ -154,10 +154,13 @@ function Home() {
             <h1 className="font-bold text-2xl mb-4">Erich Lehmann</h1>
             <div className="mb-6 text-sm">
               <p className="mb-2">Here, in short, is who I am.</p>
-              <p>
+              <p className="mb-2">
                 I think deeply about what it means to live a good life. I enjoy making
-                things that people love. I have built two successful companies from the
-                ground up. I can code, I can sell and I have never stopped learning.
+                things that people love.
+              </p>
+              <p>
+                I have built two successful companies from the ground up. I can code, I
+                can sell and I have never stopped learning.
               </p>
             </div>
             <h2 className="font-bold text-lg mb-2">Reel</h2>
@@ -212,7 +215,7 @@ function Home() {
               {education.map((edu, i) => (
                 <div
                   key={i}
-                  className="mb-3 text-sm print:break-inside-avoid flex gap-2 items-start"
+                  className="mb-3 text-sm print:break-inside-avoid flex gap-2 items-center"
                 >
                   {edu.img && (
                     <div className="flex-shrink-0">
