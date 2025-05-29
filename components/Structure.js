@@ -43,7 +43,7 @@ function Link({ href, children, size = "normal" }) {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className={`font-bold text-black hover:text-blue-600 transition-colors inline-flex items-center gap-1 ${sizeClasses[size]} print:text-black`}
+      className={`font-medium text-black hover:text-blue-600 transition-colors inline-flex items-center gap-1 ${sizeClasses[size]} print:text-black`}
     >
       <span>{children}</span>
       <ArrowTopRightOnSquareIcon className={`${iconSizes[size]} print:hidden`} />

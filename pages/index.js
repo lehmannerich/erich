@@ -79,16 +79,17 @@ function Home() {
                 </div>
               )}
               <div className="w-full">
-                <p className="font-medium">{edu.degree}</p>
-                <p className="text-stone-500">
+                <p className="font-medium">
                   {edu.link ? (
                     <Link href={edu.link} size="small">
                       {edu.school}
                     </Link>
                   ) : (
                     edu.school
-                  )}{" "}
-                  {edu.date}
+                  )}
+                </p>
+                <p className="text-stone-500">
+                  {edu.degree} {edu.date && `· ${edu.date}`}
                 </p>
               </div>
             </div>
@@ -229,18 +230,18 @@ const experience = [
 
 const education = [
   {
+    school: "Y Combinator",
+    degree: "Alumnus of Batch W21",
+    date: "",
+    img: "/YC.jpg",
+    link: "https://www.ycombinator.com/why",
+  },
+  {
     school: "Ludwig-Maximilians-Universität München",
     degree: "Bachelor of Science, Business Administration",
     date: "2010 - 2014",
     img: "/LMU.jpg",
     link: "https://www.som.lmu.de/en/index.html",
-  },
-  {
-    school: "Y Combinator",
-    degree: "Alumni of Batch W21",
-    date: "",
-    img: "/YC.jpg",
-    link: "https://www.ycombinator.com/why",
   },
 ];
 
@@ -251,6 +252,7 @@ const essaysData = [
     date: "2022-12-07",
     type: "essay",
     logo: "/logos/substack.png",
+    visible: true,
   },
   {
     title: "Bookshelf 2022",
@@ -258,6 +260,7 @@ const essaysData = [
     date: "2022-10-21",
     type: "essay",
     logo: "/logos/substack.png",
+    visible: false,
   },
   {
     title: "The basics of predictive processing",
@@ -265,6 +268,7 @@ const essaysData = [
     date: "2022-08-27",
     type: "essay",
     logo: "/logos/substack.png",
+    visible: true,
   },
   {
     title: "The right kind of optimism",
@@ -272,6 +276,7 @@ const essaysData = [
     date: "2023-04-11",
     type: "essay",
     logo: "/logos/substack.png",
+    visible: false,
   },
 ];
 
@@ -283,6 +288,7 @@ const podcastsData = [
     date: "2023-10-07",
     type: "podcast",
     logo: "/logos/youtube.png",
+    visible: true,
   },
   {
     title: "Hermann Simon: Deutschlands Zukunft und Hidden Champions",
@@ -291,6 +297,7 @@ const podcastsData = [
     date: "2023-12-26",
     type: "podcast",
     logo: "/logos/youtube.png",
+    visible: true,
   },
   {
     title:
@@ -300,14 +307,17 @@ const podcastsData = [
     date: "2023-04-01",
     type: "podcast",
     logo: "/logos/youtube.png",
+    visible: false,
   },
 ];
 
-const allPublications = [...essaysData, ...podcastsData].sort((a, b) => {
-  const dateA = new Date(a.date);
-  const dateB = new Date(b.date);
-  return dateB - dateA;
-});
+const allPublications = [...essaysData, ...podcastsData]
+  .filter((item) => item.visible)
+  .sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB - dateA;
+  });
 
 const showLinks = false;
 
