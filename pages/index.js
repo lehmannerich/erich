@@ -7,7 +7,7 @@ function Home() {
   return (
     <>
       <Main>
-        <Headline>I'm Erich,</Headline>
+        <Headline>Erich Lehmann</Headline>
         <TextBlock>
           <p>Here, in short, is who I am.</p>
           <p>

@@ -1,5 +1,7 @@
 function Headline({ children }) {
-  return <h2 className="font-bold mt-12 print:mt-6 print:text-lg">{children}</h2>;
+  return (
+    <h2 className="font-bold text-2xl mt-12 print:mt-6 print:text-lg">{children}</h2>
+  );
 }
 
 function TextBlock({ children }) {
