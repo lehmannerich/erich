@@ -54,7 +54,14 @@ function Main({ children }) {
   );
 }
 
-function Link({ href, children, size = "normal", printBlue = false }) {
+function Link({
+  href,
+  children,
+  size = "normal",
+  printBlue = false,
+  className = "",
+  ...props
+}) {
   const sizeClasses = {
     small: "text-sm",
     normal: "text-base",
@@ -74,7 +81,8 @@ function Link({ href, children, size = "normal", printBlue = false }) {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className={`font-medium text-black hover:text-blue-600 transition-colors inline-flex items-center gap-1 ${sizeClasses[size]} ${printColorClass}`}
+      className={`font-medium text-black hover:text-blue-600 transition-colors inline-flex items-center gap-1 ${sizeClasses[size]} ${printColorClass} ${className}`}
+      {...props}
     >
       <span>{children}</span>
       <ArrowTopRightOnSquareIcon className={`${iconSizes[size]} print:hidden`} />

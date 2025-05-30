@@ -1,6 +1,6 @@
 import { faGithub, faLinkedin, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import { EnvelopeIcon, PhoneIcon, PrinterIcon } from "@heroicons/react/24/outline";
 import { formatDistanceToNow, intervalToDuration } from "date-fns";
 import Image from "next/image";
 import Script from "next/script";
@@ -16,7 +16,34 @@ function Home() {
     <>
       <Main>
         <div className="print:hidden">
-          <Headline>Erich Lehmann</Headline>
+          <div className="flex justify-between items-baseline mb-4">
+            <Headline className="mb-0">Erich Lehmann</Headline>
+            <div className="flex items-center space-x-3">
+              <div className="group relative flex">
+                <button
+                  onClick={() => window.print()}
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  <PrinterIcon className="h-5 w-5" />
+                </button>
+                <span className="absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap scale-0 transform rounded bg-gray-700 px-2 py-1 text-xs text-white opacity-0 transition-all duration-200 ease-in-out group-hover:scale-100 group-hover:opacity-100">
+                  Print as PDF
+                </span>
+              </div>
+
+              <div className="group relative flex">
+                <a
+                  href="mailto:erichjohannlehmann@gmail.com"
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  <EnvelopeIcon className="h-5 w-5" />
+                </a>
+                <span className="absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap scale-0 transform rounded bg-gray-700 px-2 py-1 text-xs text-white opacity-0 transition-all duration-200 ease-in-out group-hover:scale-100 group-hover:opacity-100">
+                  Email Erich
+                </span>
+              </div>
+            </div>
+          </div>
           <TextBlock>
             <p>Here, in short, is who I am.</p>
             <p>
@@ -27,7 +54,11 @@ function Home() {
             <p>
               Currently, I&apos;m applying to OpenAI. So, if you are from OpenAI... hello
               👋 I&apos;m glad you made it here! This is my CV and these are{" "}
-              <Link href="https://erich-reel.vercel.app/" printBlue={true}>
+              <Link
+                href="https://erich-reel.vercel.app/"
+                printBlue={true}
+                className="text-blue-600"
+              >
                 15 reasons you should hire me
               </Link>
             </p>
@@ -170,7 +201,12 @@ function Home() {
             </div>
             <h2 className="font-bold text-lg mb-2">Reel</h2>
             <div className="mb-6 text-sm">
-              <Link href="https://erich-reel.vercel.app/" printBlue={true} size="small">
+              <Link
+                href="https://erich-reel.vercel.app/"
+                printBlue={true}
+                size="small"
+                className="text-blue-600"
+              >
                 15 reasons you should hire me
               </Link>
               <p className="text-xs text-stone-500 mt-0.5">
