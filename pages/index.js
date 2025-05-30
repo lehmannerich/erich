@@ -25,10 +25,10 @@ function Home() {
               ground up. I can code, I can sell and I have never stopped learning.
             </p>
             <p>
-              Currently, I&apos;m applying to OpenAI. So, if you are from OpenAI... hello 👋
-              I&apos;m glad you made it here! This is my CV and these are{" "}
-              <Link href="https://reel-rose.vercel.app/" printBlue={true}>
-                18 reasons you should hire me
+              Currently, I&apos;m applying to OpenAI. So, if you are from OpenAI... hello
+              👋 I&apos;m glad you made it here! This is my CV and these are{" "}
+              <Link href="https://erich-reel.vercel.app/" printBlue={true}>
+                15 reasons you should hire me
               </Link>
             </p>
           </TextBlock>
@@ -170,11 +170,11 @@ function Home() {
             </div>
             <h2 className="font-bold text-lg mb-2">Reel</h2>
             <div className="mb-6 text-sm">
-              <Link href="https://reel-rose.vercel.app/" printBlue={true} size="small">
-                18 reasons you should hire me
+              <Link href="https://erich-reel.vercel.app/" printBlue={true} size="small">
+                15 reasons you should hire me
               </Link>
               <p className="text-xs text-stone-500 mt-0.5">
-                https://reel-rose.vercel.app/
+                https://erich-reel.vercel.app/
               </p>
             </div>
             <h2 className="font-bold text-lg mb-2">Contact</h2>
