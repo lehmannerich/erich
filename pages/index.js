@@ -423,7 +423,7 @@ const experience = [
     company: "DieForschungszulage",
     title: "Founder",
     description:
-      "DieForschungszulage is a Service that helps startups get government funding. I closed €400k of deal volume in the first year and built the entire customer base from scratch.",
+      "DieForschungszulage is a service that helps startups get government funding. I closed €400k of deal volume in the first year and built the entire customer base from scratch.",
     date: "Jan 2023 - Present",
     time: getDurationToPresent(2023, 0),
     link: "https://www.dieforschungszulage.de/",
@@ -433,7 +433,7 @@ const experience = [
     company: "MeetAnyway",
     title: "Co-Founder",
     description:
-      "MeetAnyway helps researchers to organize online conferences. We made over €1M in revenue and had over 30k users in the first two years. I closed over 100 of some of the most renowned research institutes in the world.",
+      "MeetAnyway helps researchers to organize online conferences. We made over €1M in revenue and had over 30k users in the first two years. I brought on board over 100 of the world's most renowned research institutes.",
     date: "Jan 2018 - Dec 2024",
     time: "7 yrs",
     link: "https://www.ycombinator.com/companies/meetanyway",
@@ -444,7 +444,7 @@ const experience = [
     title: "Founder",
     date: "2016 - 2018",
     description:
-      "Studipost was a free messenger for teachers and parents. We made it to 4k weekly active users. In the end I couldn't get the business model to work - the sales cycles were too long and not profitable enough.",
+      "Studipost was a free messenger for teachers and parents. It reached 4,000 weekly active users. In the end I couldn't get the business model to work - the sales cycles were too long and not profitable enough.",
     time: "2 yrs",
     img: "/AV.jpg",
   },
@@ -452,7 +452,7 @@ const experience = [
     company: "Deloitte Digital",
     title: "Venture Architect",
     description:
-      "Deloitte Digital helps German DAX companies build new businesses. I was employee #3 and by the time I left we were a team of 40 and closed 5 really big deals. I was not the closer, but I got to watch from some skilled people do it.",
+      "Deloitte Digital helps German DAX companies build new businesses. I joined as employee #3; by my departure, the team had grown to 40 and secured five major deals. While not the primary closer, I gained valuable insights observing skilled professionals execute these deals.",
     date: "2014 - 2016",
     time: "2 yrs",
     link: "https://www.deloittedigital.com/",
